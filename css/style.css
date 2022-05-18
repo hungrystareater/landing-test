@@ -1,0 +1,894 @@
+/*
+	HTML5 Reset :: style.css (lines 1-322)
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+main,
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+	display: block;
+}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img,
+object,
+embed {
+	max-width: 100%;
+}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+#map img {
+		max-width: none;
+}
+*/
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+	overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+th {
+	font-weight: bold;
+	vertical-align: bottom;
+}
+
+td {
+	font-weight: normal;
+	vertical-align: top;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+input,
+select {
+	vertical-align: middle;
+}
+
+pre {
+	white-space: pre;
+	/* CSS2 */
+	white-space: pre-wrap;
+	/* CSS 2.1 */
+	white-space: pre-line;
+	/* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word;
+	/* IE */
+}
+
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+	vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+	vertical-align: baseline;
+}
+
+.ie6 input {
+	vertical-align: text-bottom;
+}
+
+select,
+input,
+textarea {
+	font: 99% sans-serif;
+}
+
+table {
+	font-size: inherit;
+	font: 100%;
+}
+
+small {
+	font-size: 85%;
+}
+
+strong {
+	font-weight: bold;
+}
+
+td,
+td img {
+	vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre,
+code,
+kbd,
+samp {
+	font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+	cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button,
+input,
+select,
+textarea {
+	margin: 0;
+}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+	width: auto;
+	overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+	-ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+
+/*CSS RESET END*/
+
+
+
+
+/* LANDING TEST STYLE BEGIN */
+/* LANDING TEST STYLE BEGIN */
+/* LANDING TEST STYLE BEGIN */
+:root {
+	--gradient-blue: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
+	--text-color: #2D3238;
+	--light-blue: #E8F4F7;
+	--white: #FFFFFF;
+	--blue: #1792C7;
+}
+
+@font-face {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Avenir-Next-Regular'),
+		url('../fonts/AvenirNextCyr-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Avenir-Next-Semibold'),
+		url('../fonts/AvenirNextCyr-Demi.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Avenir-Next-Bold'),
+		url('../fonts/AvenirNextCyr-Bold.woff2') format('woff2');
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: normal;
+	color: var(--text-color);
+}
+
+.wrapper {
+	width: 1098px;
+	margin: 0 auto;
+}
+
+/* Header styles start */
+
+.header {
+	width: 100%;
+	margin-top: 35px;
+}
+
+.header__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+	border: 1px solid black;
+}
+
+.header__logo {
+	align-self: center;
+	padding-top: 9px;
+}
+
+.header__nav {
+	align-self: center;
+}
+
+.header__list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header__item {
+	margin-right: 39px;
+}
+
+.header__item:last-child {
+	margin-right: 0;
+}
+
+.header__link {
+	font-size: 14px;
+	line-height: 19px;
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+.header__link:hover,
+.header__link:focus,
+.header__link:active {
+	opacity: .75;
+}
+
+.header__lang {
+	align-self: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header__lang:first-child {
+	margin-right: 12px;
+}
+
+.header__lang-item-link {
+	font-size: 16px;
+	line-height: 22px;
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+.header__lang-item-link:first-child {
+	margin-left: 12px;
+}
+
+.header__lang-item-link__chosen {
+	font-size: 16px;
+	line-height: 22px;
+	background: var(--gradient-blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.header__button {
+	width: 175px;
+	height: 48px;
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-size: 16px;
+	line-height: 22px;
+	background:
+		linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)) padding-box,
+		var(--gradient-blue) border-box;
+	border-radius: 44px;
+	border: 1px solid transparent;
+}
+
+/* Header styles end */
+
+/* Description section style begin */
+.chat__wrapper {
+	border: 1px solid black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.chat__text {
+	align-self: center;
+}
+
+.chat__h2 {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 36px;
+	letter-spacing: 0.44px;
+	display: block;
+	width: 534px;
+	margin-bottom: 24px;
+}
+
+.chat__paragraph {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 0.443077px;
+	display: block;
+	width: 530px;
+}
+
+/* Description section style begin */
+
+
+/* Description section style begin */
+.description__wrapper {
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+}
+
+.description__h1 {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 46px;
+	letter-spacing: 0.985946px;
+	display: block;
+	width: 534px;
+	margin-bottom: 24px;
+}
+
+.description__panel {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.description__item {
+	max-width: 267px;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+}
+
+.description__caption {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	text-align: center;
+	letter-spacing: 0.443077px;
+}
+
+/* Description section style end */
+
+/* Automate section style begin */
+.automate__wrapper {
+	border: 1px solid black;
+	background: var(--light-blue);
+	height: 294px;
+}
+
+.automate__h1 {
+	max-width: 434px;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 46px;
+	letter-spacing: 0.985946px;
+	margin-top: 60px;
+	margin-left: 94px;
+	float: left;
+}
+
+.automate__panel {
+	display: inline-block;
+}
+
+.automate__paragraph {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 0.443077px;
+	width: 434px;
+	display: inline-block;
+	margin-bottom: 60px;
+	padding-top: 70px;
+}
+
+.automate__input {
+	width: 440px;
+	height: 48px;
+	background: var(--white);
+	border-radius: 40px;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+	border: 1px solid rgba(56, 152, 254, 0.4);
+}
+
+.automate__input input[type=text] {
+	padding-left: 20px;
+	border: 0;
+
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.96px;
+	color: #1792C7;
+}
+
+.automate__input input[type=text]::placeholder {
+	color: var(--blue);
+}
+
+.automate__input input[type=text]:focus {
+	outline: 0;
+}
+
+.automate__input button {
+	width: 161px;
+	height: 48px;
+	background: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
+	border-radius: 44px;
+	border: 0;
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.443077px;
+	color: var(--white);
+}
+
+/* Automate section style end */
+
+/* Banks section style begin */
+.banks__wrapper {
+	border: 1px solid black;
+}
+
+.banks__h1 {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 46px;
+	letter-spacing: 0.985946px;
+	margin-bottom: 90px;
+}
+
+.banks__panel {
+	display: flex;
+	flex-direction: row;
+}
+
+.banks__panel-item {
+	width: 534px;
+	height: 420px;
+	border: 1px solid rgba(56, 152, 254, 0.187528);
+	padding-left: 40px;
+	padding-top: 20px;
+	padding-right: 40px;
+}
+
+.banks__panel-item:first-child {
+	margin-right: 30px;
+}
+
+.banks__p {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 0.443077px;
+	color: rgba(56, 152, 254, 0.5);
+}
+
+.banks__list {
+	margin-top: 36px;
+}
+
+.banks__list li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.banks__list img {
+	margin-right: 32px;
+}
+
+/* Banks section style end */
+
+/* Banks section style begin */
+.audience__wrapper {
+	border: 1px solid black;
+}
+
+.audience__h1 {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 46px;
+	letter-spacing: 0.985946px;
+	margin-bottom: 90px;
+}
+
+.audience__panel {
+	display: flex;
+	flex-direction: row;
+}
+
+.audience__panel div:last-child {
+	margin: 0;
+}
+
+.audience__item {
+	width: 345px;
+	height: 356px;
+	margin-right: 30px;
+}
+
+.audience__h3 {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: 0.44px;
+	padding-left: 65px;
+	margin-bottom: 14px;
+}
+
+.audience__p {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 0.443077px;
+	padding-left: 65px;
+}
+
+/* Cases section style begin */
+.cases__wrapper {
+	border: 1px solid black;
+}
+
+.cases__h1 {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 46px;
+	letter-spacing: 0.985946px;
+	margin-bottom: 90px;
+}
+
+.cases__panel {
+	display: flex;
+	flex-direction: row;
+}
+
+.cases__item {
+	width: 346px;
+	height: 297px;
+	margin-right: 30px;
+	padding: 30px 0 0 24px;
+	border: 1px solid rgba(56, 152, 254, 0.187528);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+
+.cases__item:hover {
+	background: var(--light-blue);
+	border: none;
+	border-bottom: 3px solid #1792C7;
+	cursor: pointer;
+}
+
+.cases__panel div:last-child {
+	margin: 0;
+}
+
+.cases__text-wrapper {}
+
+.cases__h3 {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: 0.44px;
+}
+
+.cases__span {
+	display: block;
+	padding: 20px 0 20px 0;
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 22px;
+	letter-spacing: 0.369231px;
+
+	background-image: var(--gradient-blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.cases__arrow {
+	transform: translate(0, 4px);
+}
+
+/* Cases section style end */
+
+/* Tariffs section style start */
+.tariffs__wrapper {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid black;
+}
+
+.tariffs__text-wrapper {
+	width: 564px;
+	margin-top: 44px;
+}
+
+.tariffs__h1 {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 46px;
+	letter-spacing: 0.985946px;
+	margin-bottom: 28px;
+}
+
+.tariffs__p {
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 34px;
+	letter-spacing: 0.713846px;
+	margin-bottom: 40px;
+}
+
+.tariffs__input {
+	width: 440px;
+	height: 48px;
+	background: var(--light-blue);
+	border-radius: 40px;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+}
+
+.tariffs__input input[type=text] {
+	padding-left: 20px;
+	border: 0;
+
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.96px;
+	background: var(--light-blue);
+	color: #1792C7;
+}
+
+.tariffs__input input[type=text]::placeholder {
+	color: var(--blue);
+}
+
+.tariffs__input input[type=text]:focus {
+	outline: 0;
+}
+
+.tariffs__input button {
+	width: 161px;
+	height: 48px;
+	background: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
+	border-radius: 44px;
+	border: 0;
+	font-family: 'Avenir-Next';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.443077px;
+	color: var(--white);
+}
+
+/* Tariffs section style end */
