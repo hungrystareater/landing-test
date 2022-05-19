@@ -22,19 +22,19 @@
                 <nav class="header__nav">
                     <ul class="header__list">
                         <li class="header__item">
-                            <a href="#!" class="header__link">Как это работает?</a>
+                            <a href="#how-it-works" class="header__link">Как это работает?</a>
                         </li>
                         <li class="header__item">
-                            <a href="#!" class="header__link">Для кого</a>
+                            <a href="#audience" class="header__link">Для кого</a>
                         </li>
                         <li class="header__item">
-                            <a href="#!" class="header__link">Кейсы</a>
+                            <a href="#cases" class="header__link">Кейсы</a>
                         </li>
                         <li class="header__item">
-                            <a href="#!" class="header__link">Тарифы</a>
+                            <a href="#tariffs" class="header__link">Тарифы</a>
                         </li>
                         <li class="header__item">
-                            <a href="#!" class="header__link">Безопасность</a>
+                            <a href="#safety" class="header__link">Безопасность</a>
                         </li>
                     </ul>
                 </nav>
@@ -48,18 +48,85 @@
                     </li>
                 </ul>
 
-                <button class="header__button">Подключиться</button>
+                <button class="header__button"><span class="header__btn-span">Подключиться</span></button>
             </div>
         </div>
     </header>
 
     <main class="main">
+        <!-- slider -->
+        <section class="slider">
+            <div class="wrapper">
+                <div class="slider__money">
+                    <div class="slider__money-info">
+                        <h1 class="slider__money-h1">
+                            Не пропускайте важные оплаты
+                        </h1>
+                        <p class="slider__money-p">
+                            Если от них зависят ваши проекты или старт рекламных кампаний
+                        </p>
+                        <div class="slider__money-input">
+                            <input type="text" placeholder="Введите email">
+                            <button>Узнать</button>
+                        </div>
+                    </div>
+                    <div><img src="./img/slider_money.png" alt="" class="slider__money-img"></div>
+                </div>
+                <div class="slider__pig">
+                    <div class="slider__pig-info">
+                        <h1 class="slider__pig-h1">
+                            Сократите издержки
+                            на бухгалтерию
+                            и коммуникации
+                        </h1>
+                        <p class="slider__pig-p">
+                            Получайте информацию о платежах на счет компании там, где вам удобно
+                        </p>
+                        <div class="slider__pig-input">
+                            <input type="text" placeholder="Введите email">
+                            <button>Узнать</button>
+                        </div>
+                    </div>
+                    <div><img src="./img/slider_pig.png" alt="" class="slider__pig-img"></div>
+                </div>
+                <div class="slider__snapshot">
+                    <div class="slider__snapshot-info">
+                        <h1 class="slider__snapshot-h1">
+                            Создавайте собственные сценарии действий
+                        </h1>
+                        <p class="slider__snapshot-p">
+                            при поступлении денег на счет вашей компании
+                        </p>
+                        <div class="slider__snapshot-input">
+                            <input type="text" placeholder="Введите email">
+                            <button>Узнать</button>
+                        </div>
+                    </div>
+                    <div><img src="./img/slider_snapshot.png" alt="" class="slider__snapshot-img"></div>
+                </div>
+                <div class="slider__phone">
+                    <div class="slider__phone-info">
+                        <h1 class="slider__phone-h1">
+                            Реагируйте
+                            на платежи так быстро, как они поступают
+                            на ваш счет
+                        </h1>
+                        <div class="slider__phone-input">
+                            <input type="text" placeholder="Введите email">
+                            <button>Узнать</button>
+                        </div>
+                    </div>
+                    <div><img src="./img/slider_phone.png" alt="" class="slider__phone-img"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- description -->
         <section class="chat">
             <div class="wrapper">
                 <div class="chat__wrapper">
-                    <div class="chat__svg">
-                        <img src="./img/svg/chat.svg" alt="Everypay" class="header__logo-pic">
+                    <div class="chat__image">
+                        <img src="./img/chat.png" alt="Everypay" class="header__logo-pic">
                     </div>
                     <div class="chat__text">
                         <h2 class="chat__h2">
@@ -69,13 +136,14 @@
                         <p class="chat__paragraph">
                             Бухгалтер на карантине, а директор недоступен? Ответственный сотрудник моментально узнает
                             о поступлении денег на счет компании.
+
                         </p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- как это работает -->
-        <section class="description">
+        <section class="description" id="how-it-works">
             <div class="wrapper">
                 <div class="description__wrapper">
                     <h1 class="description__h1">
@@ -84,18 +152,20 @@
 
                     <div class="description__panel">
                         <div class="description__item">
-                            <img src="./img/svg/connect.svg" alt="Connect" class="description__image">
-                            <p class="description__caption">Подключите свой банковский счет</p>
+                            <img src="./img/how-it-works_money.png" alt="Connect" class="description__image">
+                            <p class="description__caption">Подключите свой<br> банковский счет</p>
                         </div>
 
                         <div class="description__item">
-                            <img src="./img/svg/choose_recepients.svg" alt="Connect" class="description__image">
-                            <p class="description__caption">Подключите свой банковский счет</p>
+                            <img src="./img/how-it-works_recepients.png" alt="Connect" class="description__image">
+                            <p class="description__caption">Выберите, куда и кому <br>отправлять информацию</p>
                         </div>
 
                         <div class="description__item">
-                            <img src="./img/svg/get_notified.svg" alt="Connect" class="description__image">
-                            <p class="description__caption">Подключите свой банковский счет</p>
+                            <img src="./img/how-it-works_notifications.png" alt="Connect" class="description__image">
+                            <p class="description__caption">Получайте информацию
+                                <br>о поступивших оплатах
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -132,25 +202,25 @@
                     <div class="banks__panel">
                         <div class="banks__panel-item">
                             <p class="banks__p">Банки</p>
-                            <img src="./img/tochka-bank.png" alt="Connect" class="">
-                            <img src="./img/tinkoff-bank.png" alt="Connect" class="">
-                            <img src="./img/modul-bank.png" alt="Connect" class="">
-                            <hr>
-                            <img src="./img/import-1c.png" alt="Connect" class="">
+                            <img src="./img/banks_tochka.png" alt="Connect" class="">
+                            <img src="./img/banks_tinkoff.png" alt="Connect" class="">
+                            <img src="./img/banks_modulbank.png" alt="Connect" class="">
+                            <hr class="banks__hr">
+                            <img src="./img/banks_1c.png" alt="Connect" class="">
                         </div>
                         <div class="banks__panel-item">
                             <p class="banks__p">Интеграции</p>
                             <ul class="banks__list">
                                 <li>
-                                    <img src="./img/bell.png" alt="Connect" class="">
+                                    <img src="./img/banks_bell.png" alt="Connect" class="">
                                     <p>Push-web уведомления</p>
                                 </li>
                                 <li>
-                                    <img src="./img/envelope.png" alt="Connect" class="">
+                                    <img src="./img/banks_envelope.png" alt="Connect" class="">
                                     <p>E-mail уведомления</p>
                                 </li>
                                 <li>
-                                    <img src="./img/tg-logo.png" alt="Connect" class="">
+                                    <img src="./img/banks_telegram.png" alt="Connect" class="">
                                     <p>Telegram</p>
                                 </li>
                             </ul>
@@ -160,7 +230,7 @@
             </div>
         </section>
         <!-- для кого -->
-        <section class="audience">
+        <section class="audience" id="audience">
             <div class="wrapper">
                 <div class="audience__wrapper">
                     <h1 class="audience__h1">
@@ -169,28 +239,30 @@
 
                     <div class="audience__panel">
                         <div class="audience__item">
-                            <img src="./img/money-tree.png" alt="Connect" class="">
+                            <img src="./img/audience_money-tree.png" alt="Connect" class="audience__image">
                             <h3 class="audience__h3">Малый бизнес</h3>
                             <p class="audience__p">Скорость получения информации о платежах
                                 и минимизация издержек</p>
                         </div>
                         <div class="audience__item">
-                            <img src="./img/unicorn.png" alt="Connect" class="">
+                            <img src="./img/audience_unicorn.png" alt="Connect" class="audience__image">
                             <h3 class="audience__h3">Стартапы</h3>
                             <p class="audience__p">Автоматизация бизнес-процессов
                                 и бухгалтерской рутины</p>
                         </div>
                         <div class="audience__item">
-                            <img src="./img/lamp.png" alt="Connect" class="">
+                            <img src="./img/audience_lamp.png" alt="Connect" class="audience__image">
                             <h3 class="audience__h3">Разработчики</h3>
-                            <p class="audience__p">Быстрое внедрение своих приложений для малого бизнеса и стартапов</p>
+                            <p class="audience__p">
+                                Быстрое внедрение своих приложений для малого бизнеса и стартапов
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- кейсы -->
-        <section class="cases">
+        <section class="cases" id="cases">
             <div class="wrapper">
                 <div class="cases__wrapper">
                     <h1 class="cases__h1">
@@ -200,9 +272,9 @@
                     <div class="cases__panel">
                         <div class="cases__item">
                             <div>
-                                <img src="./img/bitrix.png" alt="Connect" class="">
-                                <img src="./img/everypay.png" alt="Connect" class="">
-                                <img src="./img/tg-logo-small.png" alt="Connect" class="">
+                                <img src="./img/cases_bitrix.png" alt="Connect" class="">
+                                <img src="./img/cases_everypay.png" alt="Connect" class="">
+                                <img src="./img/cases_telegram.png" alt="Connect" class="">
                             </div>
                             <div class="cases__text-wrapper">
                                 <h3 class="cases__h3">
@@ -215,9 +287,9 @@
                         </div>
                         <div class="cases__item">
                             <div>
-                                <img src="./img/bitrix.png" alt="Connect" class="">
-                                <img src="./img/everypay.png" alt="Connect" class="">
-                                <img src="./img/tochka.png" alt="Connect" class="">
+                                <img src="./img/cases_bitrix.png" alt="Connect" class="">
+                                <img src="./img/cases_everypay.png" alt="Connect" class="">
+                                <img src="./img/cases_tochka.png" alt="Connect" class="">
                             </div>
                             <div class="cases__text-wrapper">
                                 <h3 class="cases__h3">
@@ -231,9 +303,9 @@
                         </div>
                         <div class="cases__item">
                             <div>
-                                <img src="./img/bitrix.png" alt="Connect" class="">
-                                <img src="./img/everypay.png" alt="Connect" class="">
-                                <img src="./img/tochka.png" alt="Connect" class="">
+                                <img src="./img/cases_bitrix.png" alt="Connect" class="">
+                                <img src="./img/cases_everypay.png" alt="Connect" class="">
+                                <img src="./img/cases_tochka.png" alt="Connect" class="">
                             </div>
                             <div class="cases__text-wrapper">
                                 <h3 class="cases__h3">
@@ -251,7 +323,7 @@
             </div>
         </section>
         <!-- тарифы -->
-        <section class="tariffs">
+        <section class="tariffs" id="tariffs">
             <div class="wrapper">
                 <div class="tariffs__wrapper">
                     <div class="tariffs__text-wrapper">
@@ -261,7 +333,6 @@
                         <p class="tariffs__p">
                             Everypay находится в стадии закрытого beta-теста, но у вас есть возможность присоединиться к
                             тестированию сервиса. <br><br>
-
                             Для компаний, участвующих в тестировании, сервис навсегда бесплатен. Напишите нам
                             и мы с вами свяжемся.
                         </p>
@@ -276,7 +347,105 @@
                 </div>
             </div>
         </section>
+        <!-- скоро появится -->
+        <section class="coming-soon">
+            <div class="wrapper">
+                <div class="coming-soon__wrapper">
+                    <h1 class="coming-soon__h1">
+                        Скоро появится
+                    </h1>
+
+                    <div class="coming-soon__item">
+                        <h2 class="coming-soon__h2">
+                            Интеграции с CRM-системами<br>
+                            Битрикс 24 и amoCRM<br>
+                        </h2>
+                        <p class="coming-soon__p">
+                            Интегрируйте уведомления о платежах прямо
+                            в вашу CRM, в которой работают ваши сотрудники<br><br>
+                            <img src="./img/coming-soon_bitrix.png" alt="coming-soon_bitrix.png">
+                            <img src="./img/coming-soon_amocrm.png" alt="coming-soon_amocrm.png">
+                        </p>
+                    </div>
+                    <div class="coming-soon__item">
+                        <h2 class="coming-soon__h2">
+                            Открытое API Everypay
+                        </h2>
+                        <p class="coming-soon__p">
+                            Подключайте свои системы и интегрируйте уведомления о поступающих платежах самостоятельно с
+                            помощью простого API Everypay
+                        </p>
+                    </div>
+                    <div class="coming-soon__item">
+                        <h2 class="coming-soon__h2">
+                            Автоматическое создание <br>платежек
+                        </h2>
+                        <p class="coming-soon__p">
+                            Загрузите скан счета на оплату в нашу систему
+                            и в банк-клиенте автоматически будет создано платежное поручение на основании данных из
+                            счета. С помощью технологий компьютерного зрения и машинного обучения мы достигаем высокой
+                            точности и скорости работы
+                        </p>
+                    </div>
+
+                    <h3 class="coming-soon__h3">
+                        И еще 17 нововведений
+                    </h3>
+                </div>
+            </div>
+        </section>
+        <!-- безопасность -->
+        <section class="safety" id="safety">
+            <div class="wrapper">
+                <div class="safety__wrapper">
+                    <img src="./img/safety.png" alt="safety.png" class="safety__img">
+                    <div class="safety__text">
+                        <h1 class="safety__h1">
+                            Безопасность
+                        </h1>
+                        <p class="safety__p">
+                            Использование Everypay полностью безопасно: подключение к банковскому счету осуществляется в
+                            режиме «только
+                            для получения выписок», а хранение информации в системе защищено
+                            и деперсонализировано.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__wrapper">
+                <div class="footer__text">
+                    <h1 class="footer__h1">
+                        Подключиться
+                    </h1>
+                    <h2 class="footer__h2">
+                        Хотите начать пользоваться системой? Напишите нам.
+                    </h2>
+                    <p class="footer__contact-info">
+                        <span class="footer__email-caption">email</span>
+                        hello@everypay.io
+                    </p>
+                </div>
+                <form class="footer__form">
+                    <input type="text" id="footer__form-name" name="footer__form-name" placeholder="Ваше имя*"><br>
+                    <input type="text" id="footer__form-email" name="footer__form-email" placeholder="Email*"><br>
+                    <textarea id="footer__form-textarea" name="footer__form-textarea" rows="4" cols="50"
+                        placeholder="Расскажите о своей компании*"></textarea><br>
+                    <input type="submit" id="footer__form-submit" name="footer__form-submit" value="Подключиться">
+                </form>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2020, Everypay
+                </p>
+                <a href="" class="footer__confidentiality">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
