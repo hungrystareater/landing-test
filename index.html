@@ -152,17 +152,19 @@
 
                     <div class="description__panel">
                         <div class="description__item">
-                            <img src="./img/how-it-works_money.png" alt="Connect" class="description__image">
+                            <div><img src="./img/how-it-works_money.png" alt="Connect" class="description__image"></div>
                             <p class="description__caption">Подключите свой<br> банковский счет</p>
                         </div>
 
                         <div class="description__item">
-                            <img src="./img/how-it-works_recepients.png" alt="Connect" class="description__image">
+                            <div><img src="./img/how-it-works_recepients.png" alt="Connect" class="description__image">
+                            </div>
                             <p class="description__caption">Выберите, куда и кому <br>отправлять информацию</p>
                         </div>
 
                         <div class="description__item">
-                            <img src="./img/how-it-works_notifications.png" alt="Connect" class="description__image">
+                            <div><img src="./img/how-it-works_notifications.png" alt="Connect"
+                                    class="description__image"></div>
                             <p class="description__caption">Получайте информацию
                                 <br>о поступивших оплатах
                             </p>
@@ -201,27 +203,27 @@
 
                     <div class="banks__panel">
                         <div class="banks__panel-item">
-                            <p class="banks__p">Банки</p>
-                            <img src="./img/banks_tochka.png" alt="Connect" class="">
-                            <img src="./img/banks_tinkoff.png" alt="Connect" class="">
-                            <img src="./img/banks_modulbank.png" alt="Connect" class="">
+                            <p class="banks__item-caption">Банки</p>
+                            <img src="./img/banks_tochka.png" alt="Connect" class="banks__img">
+                            <img src="./img/banks_tinkoff.png" alt="Connect" class="banks__img"><br>
+                            <img src="./img/banks_modulbank.png" alt="Connect" class="banks__img">
                             <hr class="banks__hr">
                             <img src="./img/banks_1c.png" alt="Connect" class="">
                         </div>
                         <div class="banks__panel-item">
-                            <p class="banks__p">Интеграции</p>
+                            <p class="banks__item-caption">Интеграции</p>
                             <ul class="banks__list">
                                 <li>
-                                    <img src="./img/banks_bell.png" alt="Connect" class="">
-                                    <p>Push-web уведомления</p>
+                                    <img src="./img/banks_bell.png" alt="Connect" class="banks__img-icons">
+                                    <p class="banks__p">Push-web уведомления</p>
                                 </li>
                                 <li>
-                                    <img src="./img/banks_envelope.png" alt="Connect" class="">
-                                    <p>E-mail уведомления</p>
+                                    <img src="./img/banks_envelope.png" alt="Connect" class="banks__img-icons">
+                                    <p class="banks__p">E-mail уведомления</p>
                                 </li>
                                 <li>
-                                    <img src="./img/banks_telegram.png" alt="Connect" class="">
-                                    <p>Telegram</p>
+                                    <img src="./img/banks_telegram.png" alt="Connect" class="banks__img-icons">
+                                    <p class="banks__p">Telegram</p>
                                 </li>
                             </ul>
                         </div>
@@ -347,6 +349,34 @@
                 </div>
             </div>
         </section>
+        <!-- тарифы таблетно-мобайльная layout -->
+        <section class="tariffs-mobile" id="tariffs-mobile">
+            <div class="wrapper">
+                <div class="tariffs-mobile__wrapper">
+                    <div class="tariffs-mobile__img">
+                        <img src="./img/rouble.png" alt="rouble.png">
+                    </div>
+                    <h1 class="tariffs-mobile__h1">
+                        Тарифы
+                    </h1>
+                    <div class="tariffs-mobile__text-wrapper">
+                        <p class="tariffs-mobile__p">
+                            Everypay находится в стадии закрытого beta-теста, но у вас есть возможность присоединиться к
+                            тестированию сервиса. <br><br>
+                            Для компаний, участвующих в тестировании, сервис навсегда бесплатен. Напишите нам
+                            и мы с вами свяжемся.
+                        </p>
+                        <div class="tariffs-mobile__img">
+                            <img src="./img/rouble.png" alt="rouble.png">
+                        </div>
+                    </div>
+                    <div class="tariffs-mobile__input">
+                        <input type="text" placeholder="Введите email">
+                        <button>Узнать</button>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- скоро появится -->
         <section class="coming-soon">
             <div class="wrapper">
@@ -398,7 +428,11 @@
         <section class="safety" id="safety">
             <div class="wrapper">
                 <div class="safety__wrapper">
-                    <img src="./img/safety.png" alt="safety.png" class="safety__img">
+                    <div class="safety__img-wrapper"><img src="./img/safety.png" alt="safety.png" class="safety__img"></div>
+                    <h1 class="safety__h1-mobile">
+                        Безопасность
+                    </h1>
+                    <div class="safety__img-wrapper"><img src="./img/safety.png" alt="safety.png" class="safety__img"></div>
                     <div class="safety__text">
                         <h1 class="safety__h1">
                             Безопасность
@@ -433,7 +467,7 @@
                 <form class="footer__form">
                     <input type="text" id="footer__form-name" name="footer__form-name" placeholder="Ваше имя*"><br>
                     <input type="text" id="footer__form-email" name="footer__form-email" placeholder="Email*"><br>
-                    <textarea id="footer__form-textarea" name="footer__form-textarea" rows="4" cols="50"
+                    <textarea id="footer__form-textarea" name="footer__form-textarea" rows="2" cols="50"
                         placeholder="Расскажите о своей компании*"></textarea><br>
                     <input type="submit" id="footer__form-submit" name="footer__form-submit" value="Подключиться">
                 </form>
