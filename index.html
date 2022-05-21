@@ -49,74 +49,125 @@
                 </ul>
 
                 <button class="header__button"><span class="header__btn-span">Подключиться</span></button>
+
+                <div class="header__burger">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
+
+
+    <nav class="mobile-navscreen">
+        <ul class="mobile-navscreen__list">
+            <li class="">
+                <a href="#how-it-works" class="">Как это работает?</a>
+            </li>
+            <li class="">
+                <a href="#audience" class="">Для кого</a>
+            </li>
+            <li class="">
+                <a href="#cases" class="">Кейсы</a>
+            </li>
+            <li class="">
+                <a href="#tariffs" class="">Тарифы</a>
+            </li>
+            <li class="">
+                <a href="#safety" class="">Безопасность</a>
+            </li>
+            <li class="">
+                <a href="#contacts" class="">Контакты</a>
+            </li>
+            <li class="">
+                <button>Вход</button>
+            </li>
+        </ul>
+    </nav>
 
     <main class="main">
         <!-- slider -->
         <section class="slider">
             <div class="wrapper">
-                <div class="slider__money">
-                    <div class="slider__money-info">
-                        <h1 class="slider__money-h1">
-                            Не пропускайте важные оплаты
-                        </h1>
-                        <p class="slider__money-p">
-                            Если от них зависят ваши проекты или старт рекламных кампаний
-                        </p>
-                        <div class="slider__money-input">
-                            <input type="text" placeholder="Введите email">
-                            <button>Узнать</button>
+                <div class="slider__container">
+                    <div class="slider__frame-row">
+                        <!-- slider money -->
+                        <div class="slider__money">
+                            <div class="slider__money-info">
+                                <h1 class="slider__money-h1">
+                                    Не пропускайте важные оплаты
+                                </h1>
+                                <p class="slider__money-p">
+                                    Если от них зависят ваши проекты или старт рекламных кампаний
+                                </p>
+                                <div class="slider__money-input">
+                                    <input type="text" placeholder="Введите email">
+                                    <button>Узнать</button>
+                                </div>
+                            </div>
+                            <div><img src="./img/slider_money.png" alt="" class="slider__money-img"></div>
+                        </div>
+                        <!-- slider pig -->
+                        <div class="slider__pig">
+                            <div class="slider__pig-info">
+                                <h1 class="slider__pig-h1">
+                                    Сократите издержки
+                                    на бухгалтерию
+                                    и коммуникации
+                                </h1>
+                                <p class="slider__pig-p">
+                                    Получайте информацию о платежах на счет компании там, где вам удобно
+                                </p>
+                                <div class="slider__pig-input">
+                                    <input type="text" placeholder="Введите email">
+                                    <button>Узнать</button>
+                                </div>
+                            </div>
+                            <div><img src="./img/slider_pig.png" alt="" class="slider__pig-img"></div>
+                        </div>
+                        <!-- slider snapshot -->
+                        <div class="slider__snapshot">
+                            <div class="slider__snapshot-info">
+                                <h1 class="slider__snapshot-h1">
+                                    Создавайте собственные сценарии действий
+                                </h1>
+                                <p class="slider__snapshot-p">
+                                    при поступлении денег на счет вашей компании
+                                </p>
+                                <div class="slider__snapshot-input">
+                                    <input type="text" placeholder="Введите email">
+                                    <button>Узнать</button>
+                                </div>
+                            </div>
+                            <div><img src="./img/slider_snapshot.png" alt="" class="slider__snapshot-img"></div>
+                        </div>
+                        <!-- slider phone -->
+                        <div class="slider__phone">
+                            <div class="slider__phone-info">
+                                <h1 class="slider__phone-h1">
+                                    Реагируйте
+                                    на платежи так быстро, как они поступают
+                                    на ваш счет
+                                </h1>
+                                <div class="slider__phone-input">
+                                    <input type="text" placeholder="Введите email">
+                                    <button>Узнать</button>
+                                </div>
+                            </div>
+                            <div><img src="./img/slider_phone.png" alt="" class="slider__phone-img"></div>
                         </div>
                     </div>
-                    <div><img src="./img/slider_money.png" alt="" class="slider__money-img"></div>
                 </div>
-                <div class="slider__pig">
-                    <div class="slider__pig-info">
-                        <h1 class="slider__pig-h1">
-                            Сократите издержки
-                            на бухгалтерию
-                            и коммуникации
-                        </h1>
-                        <p class="slider__pig-p">
-                            Получайте информацию о платежах на счет компании там, где вам удобно
-                        </p>
-                        <div class="slider__pig-input">
-                            <input type="text" placeholder="Введите email">
-                            <button>Узнать</button>
-                        </div>
+                <div class="slider__button-container">
+                    <div class="slider__button slider__button__displayed">
                     </div>
-                    <div><img src="./img/slider_pig.png" alt="" class="slider__pig-img"></div>
-                </div>
-                <div class="slider__snapshot">
-                    <div class="slider__snapshot-info">
-                        <h1 class="slider__snapshot-h1">
-                            Создавайте собственные сценарии действий
-                        </h1>
-                        <p class="slider__snapshot-p">
-                            при поступлении денег на счет вашей компании
-                        </p>
-                        <div class="slider__snapshot-input">
-                            <input type="text" placeholder="Введите email">
-                            <button>Узнать</button>
-                        </div>
+                    <div class="slider__button">
                     </div>
-                    <div><img src="./img/slider_snapshot.png" alt="" class="slider__snapshot-img"></div>
-                </div>
-                <div class="slider__phone">
-                    <div class="slider__phone-info">
-                        <h1 class="slider__phone-h1">
-                            Реагируйте
-                            на платежи так быстро, как они поступают
-                            на ваш счет
-                        </h1>
-                        <div class="slider__phone-input">
-                            <input type="text" placeholder="Введите email">
-                            <button>Узнать</button>
-                        </div>
+                    <div class="slider__button">
                     </div>
-                    <div><img src="./img/slider_phone.png" alt="" class="slider__phone-img"></div>
+                    <div class="slider__button">
+                    </div>
                 </div>
             </div>
         </section>
@@ -428,11 +479,13 @@
         <section class="safety" id="safety">
             <div class="wrapper">
                 <div class="safety__wrapper">
-                    <div class="safety__img-wrapper"><img src="./img/safety.png" alt="safety.png" class="safety__img"></div>
+                    <div class="safety__img-wrapper"><img src="./img/safety.png" alt="safety.png" class="safety__img">
+                    </div>
                     <h1 class="safety__h1-mobile">
                         Безопасность
                     </h1>
-                    <div class="safety__img-wrapper"><img src="./img/safety.png" alt="safety.png" class="safety__img"></div>
+                    <div class="safety__img-wrapper"><img src="./img/safety.png" alt="safety.png" class="safety__img">
+                    </div>
                     <div class="safety__text">
                         <h1 class="safety__h1">
                             Безопасность
@@ -480,6 +533,8 @@
             </div>
         </div>
     </footer>
+
+    <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>
