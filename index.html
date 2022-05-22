@@ -57,34 +57,32 @@
                 </div>
             </div>
         </div>
+        <nav class="mobile-navscreen">
+            <ul class="mobile-navscreen__list">
+                <li class="">
+                    <a href="#how-it-works" class="">Как это работает?</a>
+                </li>
+                <li class="">
+                    <a href="#audience" class="">Для кого</a>
+                </li>
+                <li class="">
+                    <a href="#cases" class="">Кейсы</a>
+                </li>
+                <li class="">
+                    <a href="#tariffs-mobile" class="">Тарифы</a>
+                </li>
+                <li class="">
+                    <a href="#safety" class="">Безопасность</a>
+                </li>
+                <li class="">
+                    <a href="#footer" class="">Контакты</a>
+                </li>
+                <li class="">
+                    <button>Вход</button>
+                </li>
+            </ul>
+        </nav>
     </header>
-
-
-    <nav class="mobile-navscreen">
-        <ul class="mobile-navscreen__list">
-            <li class="">
-                <a href="#how-it-works" class="">Как это работает?</a>
-            </li>
-            <li class="">
-                <a href="#audience" class="">Для кого</a>
-            </li>
-            <li class="">
-                <a href="#cases" class="">Кейсы</a>
-            </li>
-            <li class="">
-                <a href="#tariffs" class="">Тарифы</a>
-            </li>
-            <li class="">
-                <a href="#safety" class="">Безопасность</a>
-            </li>
-            <li class="">
-                <a href="#contacts" class="">Контакты</a>
-            </li>
-            <li class="">
-                <button>Вход</button>
-            </li>
-        </ul>
-    </nav>
 
     <main class="main">
         <!-- slider -->
@@ -175,6 +173,7 @@
         <!-- description -->
         <section class="chat">
             <div class="wrapper">
+                <img src="./img/bg-check.svg" alt="rouble.png" class="description__bg-pic">
                 <div class="chat__wrapper">
                     <div class="chat__image">
                         <img src="./img/chat.png" alt="Everypay" class="header__logo-pic">
@@ -200,7 +199,7 @@
                     <h1 class="description__h1">
                         Как это работает
                     </h1>
-
+                    <img src="./img/bg-lattice.svg" alt="rouble.png" class="description__bg-pic-2">
                     <div class="description__panel">
                         <div class="description__item">
                             <div><img src="./img/how-it-works_money.png" alt="Connect" class="description__image"></div>
@@ -311,6 +310,7 @@
                             </p>
                         </div>
                     </div>
+                    <img src="./img/bg-check-cut.svg" alt="rouble.png" class="audience__bg-pic">
                 </div>
             </div>
         </section>
@@ -324,7 +324,7 @@
 
                     <div class="cases__panel">
                         <div class="cases__item">
-                            <div>
+                            <div class="cases__image-group">
                                 <img src="./img/cases_bitrix.png" alt="Connect" class="">
                                 <img src="./img/cases_everypay.png" alt="Connect" class="">
                                 <img src="./img/cases_telegram.png" alt="Connect" class="">
@@ -339,7 +339,7 @@
                             </div>
                         </div>
                         <div class="cases__item">
-                            <div>
+                            <div class="cases__image-group">
                                 <img src="./img/cases_bitrix.png" alt="Connect" class="">
                                 <img src="./img/cases_everypay.png" alt="Connect" class="">
                                 <img src="./img/cases_tochka.png" alt="Connect" class="">
@@ -355,7 +355,7 @@
                             </div>
                         </div>
                         <div class="cases__item">
-                            <div>
+                            <div class="cases__image-group">
                                 <img src="./img/cases_bitrix.png" alt="Connect" class="">
                                 <img src="./img/cases_everypay.png" alt="Connect" class="">
                                 <img src="./img/cases_tochka.png" alt="Connect" class="">
@@ -371,6 +371,14 @@
                                 </span>
                             </div>
                         </div>
+                    </div>
+
+                    <img src="./img/bg-check.svg" alt="rouble.png" class="cases__bg-pic">
+
+                    <div class="cases__button-container">
+                        <div class="cases__button cases__button__displayed"></div>
+                        <div class="cases__button"></div>
+                        <div class="cases__button"></div>
                     </div>
                 </div>
             </div>
@@ -502,7 +510,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="wrapper">
             <div class="footer__wrapper">
                 <div class="footer__text">
@@ -517,11 +525,15 @@
                         hello@everypay.io
                     </p>
                 </div>
-                <form class="footer__form">
-                    <input type="text" id="footer__form-name" name="footer__form-name" placeholder="Ваше имя*"><br>
-                    <input type="text" id="footer__form-email" name="footer__form-email" placeholder="Email*"><br>
+                <form class="footer__form"  action="" method="post">
+                    <p class="footer__form-p" id="footer__form-p">
+                        Спасибо!<br>Мы приняли ваш запрос.<br><br>В ближайшее время наш специалист поддержки свяжется с
+                        вами.
+                    </p>
+                    <input type="text" id="footer__form-name" name="footer__form-name" placeholder="Ваше имя*" required><br>
+                    <input type="text" id="footer__form-email" name="footer__form-email" placeholder="Email*" required><br>
                     <textarea id="footer__form-textarea" name="footer__form-textarea" rows="2" cols="50"
-                        placeholder="Расскажите о своей компании*"></textarea><br>
+                        placeholder="Расскажите о своей компании*" required></textarea><br>
                     <input type="submit" id="footer__form-submit" name="footer__form-submit" value="Подключиться">
                 </form>
             </div>
