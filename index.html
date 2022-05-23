@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/index.js"></script>
     <title>Document</title>
 </head>
 
@@ -15,7 +16,7 @@
             <div class="header__wrapper">
                 <div class="header__logo">
                     <a href="/" class="header__logo-link">
-                        <img src="./img/svg/header_logo.svg" alt="Everypay" class="header__logo-pic">
+                        <img src="./img/header_logo.svg" alt="header_logo.svg" class="header__logo-pic">
                     </a>
                 </div>
 
@@ -99,12 +100,19 @@
                                 <p class="slider__money-p">
                                     Если от них зависят ваши проекты или старт рекламных кампаний
                                 </p>
-                                <div class="slider__money-input">
-                                    <input type="text" placeholder="Введите email">
-                                    <button>Узнать</button>
-                                </div>
+                                <form class="slider__money-form" id="slider__money-form" method="post">
+                                    <p class="slider__money-email-done">
+                                        <img src="./img/green-check.svg" alt="green-check.svg">
+                                        Проверьте e-mail!
+                                    </p>
+                                    <label for="slider__money-form-text">slider__money-form-text</label>
+                                    <input type="text" name="email" id="slider__money-form-text"
+                                        placeholder="Введите email" required>
+                                    <label for="slider__money-form-submit">slider__money-form-submit</label>
+                                    <input type="submit" id="slider__money-form-submit" value="Узнать">
+                                </form>
                             </div>
-                            <div><img src="./img/slider_money.png" alt="" class="slider__money-img"></div>
+                            <div><img src="./img/slider_money.png" alt="slider_money.png" class="slider__money-img"></div>
                         </div>
                         <!-- slider pig -->
                         <div class="slider__pig">
@@ -117,12 +125,18 @@
                                 <p class="slider__pig-p">
                                     Получайте информацию о платежах на счет компании там, где вам удобно
                                 </p>
-                                <div class="slider__pig-input">
-                                    <input type="text" placeholder="Введите email">
-                                    <button>Узнать</button>
-                                </div>
+                                <form class="slider__pig-form" id="slider__pig-form" method="post">
+                                    <p class="slider__pig-email-done">
+                                        <img src="./img/green-check.svg" alt="green-check.svg" class="">
+                                        Проверьте e-mail!
+                                    </p>
+                                    <label for="slider__pig-form-text">slider__pig-form-text</label>
+                                    <input type="text" id="slider__pig-form-text" placeholder="Введите email" required>
+                                    <label for="slider__pig-form-submit">slider__pig-form-submit</label>
+                                    <input type="submit" id="slider__pig-form-submit" value="Узнать">
+                                </form>
                             </div>
-                            <div><img src="./img/slider_pig.png" alt="" class="slider__pig-img"></div>
+                            <div><img src="./img/slider_pig.png" alt="slider_pig.png" class="slider__pig-img"></div>
                         </div>
                         <!-- slider snapshot -->
                         <div class="slider__snapshot">
@@ -133,12 +147,19 @@
                                 <p class="slider__snapshot-p">
                                     при поступлении денег на счет вашей компании
                                 </p>
-                                <div class="slider__snapshot-input">
-                                    <input type="text" placeholder="Введите email">
-                                    <button>Узнать</button>
-                                </div>
+                                <form class="slider__snapshot-form" id="slider__snapshot-form" method="post">
+                                    <p class="slider__snapshot-email-done">
+                                        <img src="./img/green-check.svg" alt="green-check.svg">
+                                        Проверьте e-mail!
+                                    </p>
+                                    <label for="slider__snapshot-form-text">slider__snapshot-form-text</label>
+                                    <input type="text" id="slider__snapshot-form-text" placeholder="Введите email"
+                                        required>
+                                    <label for="slider__snapshot-form-submit">slider__snapshot-form-submit</label>
+                                    <input type="submit" id="slider__snapshot-form-submit" value="Узнать">
+                                </form>
                             </div>
-                            <div><img src="./img/slider_snapshot.png" alt="" class="slider__snapshot-img"></div>
+                            <div><img src="./img/slider_snapshot.png" alt="slider_snapshot.png" class="slider__snapshot-img"></div>
                         </div>
                         <!-- slider phone -->
                         <div class="slider__phone">
@@ -148,24 +169,31 @@
                                     на платежи так быстро, как они поступают
                                     на ваш счет
                                 </h1>
-                                <div class="slider__phone-input">
-                                    <input type="text" placeholder="Введите email">
-                                    <button>Узнать</button>
-                                </div>
+                                <form class="slider__phone-form" id="slider__phone-form" method="post">
+                                    <p class="slider__phone-email-done">
+                                        <img src="./img/green-check.svg" alt="green-check.svg">
+                                        Проверьте e-mail!
+                                    </p>
+                                    <label for="slider__phone-form-text">slider__phone-form-text</label>
+                                    <input type="text" id="slider__phone-form-text" placeholder="Введите email"
+                                        required>
+                                    <label for="slider__phone-form-submit">slider__phone-form-submit</label>
+                                    <input type="submit" id="slider__phone-form-submit" value="Узнать">
+                                </form>
                             </div>
-                            <div><img src="./img/slider_phone.png" alt="" class="slider__phone-img"></div>
+                            <div><img src="./img/slider_phone.png" alt="slider_phone.png" class="slider__phone-img"></div>
                         </div>
                     </div>
                 </div>
                 <div class="slider__button-container">
-                    <div class="slider__button slider__button__displayed">
-                    </div>
-                    <div class="slider__button">
-                    </div>
-                    <div class="slider__button">
-                    </div>
-                    <div class="slider__button">
-                    </div>
+                    <button class="slider__button slider__button__displayed">
+                    </button>
+                    <button class="slider__button">
+                    </button>
+                    <button class="slider__button">
+                    </button>
+                    <button class="slider__button">
+                    </button>
                 </div>
             </div>
         </section>
@@ -176,7 +204,7 @@
                 <img src="./img/bg-check.svg" alt="rouble.png" class="description__bg-pic">
                 <div class="chat__wrapper">
                     <div class="chat__image">
-                        <img src="./img/chat.png" alt="Everypay" class="header__logo-pic">
+                        <img src="./img/chat.png" alt="chat.png" class="header__logo-pic">
                     </div>
                     <div class="chat__text">
                         <h2 class="chat__h2">
@@ -202,18 +230,18 @@
                     <img src="./img/bg-lattice.svg" alt="rouble.png" class="description__bg-pic-2">
                     <div class="description__panel">
                         <div class="description__item">
-                            <div><img src="./img/how-it-works_money.png" alt="Connect" class="description__image"></div>
+                            <div><img src="./img/how-it-works_money.png" alt="how-it-works_money.png" class="description__image"></div>
                             <p class="description__caption">Подключите свой<br> банковский счет</p>
                         </div>
 
                         <div class="description__item">
-                            <div><img src="./img/how-it-works_recepients.png" alt="Connect" class="description__image">
+                            <div><img src="./img/how-it-works_recepients.png" alt="how-it-works_recepients.png" class="description__image">
                             </div>
                             <p class="description__caption">Выберите, куда и кому <br>отправлять информацию</p>
                         </div>
 
                         <div class="description__item">
-                            <div><img src="./img/how-it-works_notifications.png" alt="Connect"
+                            <div><img src="./img/how-it-works_notifications.png" alt="how-it-works_notifications.png"
                                     class="description__image"></div>
                             <p class="description__caption">Получайте информацию
                                 <br>о поступивших оплатах
@@ -235,10 +263,16 @@
                         <p class="automate__paragraph">
                             Подключайте привычные приложения, которые вы используете в работе.
                         </p>
-                        <div class="automate__input">
-                            <input type="text" placeholder="Введите email">
-                            <button>Узнать</button>
-                        </div>
+                        <form class="automate__form" id="automate__money-form" method="post">
+                            <p class="automate__email-done">
+                                <img src="./img/green-check.svg" alt="green-check.svg">
+                                Проверьте e-mail!
+                            </p>
+                            <label for="automate__form-text">automate__form-text</label>
+                            <input type="text" id="automate__form-text" placeholder="Введите email" required>
+                            <label for="automate__form-submit">slider__phone-form-submit</label>
+                            <input type="submit" id="automate__form-submit" value="Узнать">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -254,25 +288,25 @@
                     <div class="banks__panel">
                         <div class="banks__panel-item">
                             <p class="banks__item-caption">Банки</p>
-                            <img src="./img/banks_tochka.png" alt="Connect" class="banks__img">
-                            <img src="./img/banks_tinkoff.png" alt="Connect" class="banks__img"><br>
-                            <img src="./img/banks_modulbank.png" alt="Connect" class="banks__img">
+                            <img src="./img/banks_tochka.png" alt="banks_tochka.png" class="banks__img">
+                            <img src="./img/banks_tinkoff.png" alt="banks_tinkoff.png" class="banks__img"><br>
+                            <img src="./img/banks_modulbank.png" alt="banks_modulbank.png" class="banks__img">
                             <hr class="banks__hr">
-                            <img src="./img/banks_1c.png" alt="Connect" class="">
+                            <img src="./img/banks_1c.png" alt="banks_1c.png" class="">
                         </div>
                         <div class="banks__panel-item">
                             <p class="banks__item-caption">Интеграции</p>
                             <ul class="banks__list">
                                 <li>
-                                    <img src="./img/banks_bell.png" alt="Connect" class="banks__img-icons">
+                                    <img src="./img/banks_bell.png" alt="banks_bell.png" class="banks__img-icons">
                                     <p class="banks__p">Push-web уведомления</p>
                                 </li>
                                 <li>
-                                    <img src="./img/banks_envelope.png" alt="Connect" class="banks__img-icons">
+                                    <img src="./img/banks_envelope.png" alt="banks_envelope.png" class="banks__img-icons">
                                     <p class="banks__p">E-mail уведомления</p>
                                 </li>
                                 <li>
-                                    <img src="./img/banks_telegram.png" alt="Connect" class="banks__img-icons">
+                                    <img src="./img/banks_telegram.png" alt="banks_telegram.png" class="banks__img-icons">
                                     <p class="banks__p">Telegram</p>
                                 </li>
                             </ul>
@@ -283,6 +317,7 @@
         </section>
         <!-- для кого -->
         <section class="audience" id="audience">
+            <img src="./img/bg-check-cut.svg" alt="bg-check-cut.svg" class="audience__bg-pic">
             <div class="wrapper">
                 <div class="audience__wrapper">
                     <h1 class="audience__h1">
@@ -291,26 +326,25 @@
 
                     <div class="audience__panel">
                         <div class="audience__item">
-                            <img src="./img/audience_money-tree.png" alt="Connect" class="audience__image">
+                            <img src="./img/audience_money-tree.png" alt="audience_money-tree.png" class="audience__image">
                             <h3 class="audience__h3">Малый бизнес</h3>
                             <p class="audience__p">Скорость получения информации о платежах
                                 и минимизация издержек</p>
                         </div>
                         <div class="audience__item">
-                            <img src="./img/audience_unicorn.png" alt="Connect" class="audience__image">
+                            <img src="./img/audience_unicorn.png" alt="audience_unicorn.png" class="audience__image">
                             <h3 class="audience__h3">Стартапы</h3>
                             <p class="audience__p">Автоматизация бизнес-процессов
                                 и бухгалтерской рутины</p>
                         </div>
                         <div class="audience__item">
-                            <img src="./img/audience_lamp.png" alt="Connect" class="audience__image">
+                            <img src="./img/audience_lamp.png" alt="audience_lamp.png" class="audience__image">
                             <h3 class="audience__h3">Разработчики</h3>
                             <p class="audience__p">
                                 Быстрое внедрение своих приложений для малого бизнеса и стартапов
                             </p>
                         </div>
                     </div>
-                    <img src="./img/bg-check-cut.svg" alt="rouble.png" class="audience__bg-pic">
                 </div>
             </div>
         </section>
@@ -325,24 +359,24 @@
                     <div class="cases__panel">
                         <div class="cases__item">
                             <div class="cases__image-group">
-                                <img src="./img/cases_bitrix.png" alt="Connect" class="">
-                                <img src="./img/cases_everypay.png" alt="Connect" class="">
-                                <img src="./img/cases_telegram.png" alt="Connect" class="">
+                                <img src="./img/cases_bitrix.png" alt="cases_bitrix.png" class="">
+                                <img src="./img/cases_everypay.png" alt="cases_everypay.png" class="">
+                                <img src="./img/cases_telegram.png" alt="cases_telegram.png" class="">
                             </div>
                             <div class="cases__text-wrapper">
                                 <h3 class="cases__h3">
                                     Автоматизация <br>диджитал-агентства
                                 </h3>
                                 <span class="cases__span">Читать кейс
-                                    <img src="./img/arrow.svg" alt="Connect" class="cases__arrow">
+                                    <img src="./img/arrow.svg" alt="arrow.svg" class="cases__arrow">
                                 </span>
                             </div>
                         </div>
                         <div class="cases__item">
                             <div class="cases__image-group">
-                                <img src="./img/cases_bitrix.png" alt="Connect" class="">
-                                <img src="./img/cases_everypay.png" alt="Connect" class="">
-                                <img src="./img/cases_tochka.png" alt="Connect" class="">
+                                <img src="./img/cases_bitrix.png" alt="cases_bitrix.png" class="">
+                                <img src="./img/cases_everypay.png" alt="cases_everypay.png" class="">
+                                <img src="./img/cases_tochka.png" alt="cases_tochka.png" class="">
                             </div>
                             <div class="cases__text-wrapper">
                                 <h3 class="cases__h3">
@@ -350,15 +384,15 @@
                                     в рекламной медиа-группе
                                 </h3>
                                 <span class="cases__span">Читать кейс
-                                    <img src="./img/arrow.svg" alt="Connect" class="cases__arrow">
+                                    <img src="./img/arrow.svg" alt="arrow.svg" class="cases__arrow">
                                 </span>
                             </div>
                         </div>
                         <div class="cases__item">
                             <div class="cases__image-group">
-                                <img src="./img/cases_bitrix.png" alt="Connect" class="">
-                                <img src="./img/cases_everypay.png" alt="Connect" class="">
-                                <img src="./img/cases_tochka.png" alt="Connect" class="">
+                                <img src="./img/cases_bitrix.png" alt="cases_bitrix.png" class="">
+                                <img src="./img/cases_everypay.png" alt="cases_everypay.png" class="">
+                                <img src="./img/cases_tochka.png" alt="cases_tochka.png" class="">
                             </div>
                             <div class="cases__text-wrapper">
                                 <h3 class="cases__h3">
@@ -367,13 +401,13 @@
                                     компании
                                 </h3>
                                 <span class="cases__span">Читать кейс
-                                    <img src="./img/arrow.svg" alt="Connect" class="cases__arrow">
+                                    <img src="./img/arrow.svg" alt="arrow.svg" class="cases__arrow">
                                 </span>
                             </div>
                         </div>
                     </div>
 
-                    <img src="./img/bg-check.svg" alt="rouble.png" class="cases__bg-pic">
+                    <img src="./img/bg-check-cases.svg" alt="bg-check.svg" class="cases__bg-pic">
 
                     <div class="cases__button-container">
                         <div class="cases__button cases__button__displayed"></div>
@@ -397,10 +431,16 @@
                             Для компаний, участвующих в тестировании, сервис навсегда бесплатен. Напишите нам
                             и мы с вами свяжемся.
                         </p>
-                        <div class="tariffs__input">
-                            <input type="text" placeholder="Введите email">
-                            <button>Узнать</button>
-                        </div>
+                        <form class="tariffs__form" id="tariffs__money-form" method="post">
+                            <p class="tariffs__email-done">
+                                <img src="./img/green-check.svg" alt="green-check.svg">
+                                Проверьте e-mail!
+                            </p>
+                            <label for="tariffs__form-text">tariffs__form-text</label>
+                            <input type="text" id="tariffs__form-text" placeholder="Введите email" required>
+                            <label for="tariffs__form-submit">tariffs__form-submit</label>
+                            <input type="submit" id="tariffs__form-submit" value="Узнать">
+                        </form>
                     </div>
                     <div class="tariffs__img">
                         <img src="./img/rouble.png" alt="rouble.png">
@@ -429,10 +469,16 @@
                             <img src="./img/rouble.png" alt="rouble.png">
                         </div>
                     </div>
-                    <div class="tariffs-mobile__input">
-                        <input type="text" placeholder="Введите email">
-                        <button>Узнать</button>
-                    </div>
+                    <form class="tariffs-mobile__form" id="tariffs-mobile__money-form" method="post">
+                        <p class="tariffs-mobile__email-done">
+                            <img src="./img/green-check.svg" alt="green-check.svg">
+                            Проверьте e-mail!
+                        </p>
+                        <label for="tariffs-mobile__form-text">tariffs-mobile__form-text</label>
+                        <input type="text" id="tariffs-mobile__form-text" placeholder="Введите email" required>
+                        <label for="tariffs-mobile__form-submit">tariffs-mobile__form-submit</label>
+                        <input type="submit" id="tariffs-mobile__form-submit" value="Узнать">
+                    </form>
                 </div>
             </div>
         </section>
@@ -525,14 +571,18 @@
                         hello@everypay.io
                     </p>
                 </div>
-                <form class="footer__form"  action="" method="post">
+                <form class="footer__form" id="footer__form" method="post">
                     <p class="footer__form-p" id="footer__form-p">
                         Спасибо!<br>Мы приняли ваш запрос.<br><br>В ближайшее время наш специалист поддержки свяжется с
                         вами.
                     </p>
-                    <input type="text" id="footer__form-name" name="footer__form-name" placeholder="Ваше имя*" required><br>
-                    <input type="text" id="footer__form-email" name="footer__form-email" placeholder="Email*" required><br>
-                    <textarea id="footer__form-textarea" name="footer__form-textarea" rows="2" cols="50"
+                    <label for="footer__form-name">footer__form-name</label>
+                    <input type="text" id="footer__form-name" name="footerFormName" placeholder="Ваше имя*"
+                        required><br>
+                    <label for="footer__form-email">footer__form-email</label>
+                    <input type="text" id="footer__form-email" name="footerFormEmail" placeholder="Email*" required><br>
+                    <label for="footer__form-textarea">footer__form-textarea</label>
+                    <textarea id="footer__form-textarea" name="footerFormInfo" rows="2" cols="50"
                         placeholder="Расскажите о своей компании*" required></textarea><br>
                     <input type="submit" id="footer__form-submit" name="footer__form-submit" value="Подключиться">
                 </form>
@@ -545,8 +595,6 @@
             </div>
         </div>
     </footer>
-
-    <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>
