@@ -14,5 +14,7 @@
     "null"
   ],
   "author": "null",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  }
 }

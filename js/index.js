@@ -72,12 +72,12 @@ function nextFrameWrapper() {
             for (let el of e.target.parentElement.children) {
                 el.disabled = true;
             }
-            setTimeout(function() {
+            setTimeout(function () {
                 for (let el of e.target.parentElement.children) {
                     el.disabled = false;
                 }
             }, slideDuration)
-            
+
             glide(frameRow, -frameOffsets[framePosition], -frameOffsets[buttonIndex], slideDuration);
             framePosition = buttonIndex;
         }
@@ -110,7 +110,7 @@ function nextFrameWrapper() {
 
 onresize = function () {
     if (typeof sliderInterval !== 'undefined' &&
-    document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
+        document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
         clearInterval(sliderInterval);
 
 
@@ -125,7 +125,7 @@ onresize = function () {
 onblur = function () {
     //останавливаем показ слайдов при дефокусе окна чтобы не было большой очереди коллбэков 
     //из-за setInterval (будет истеричное перематывание после возвращания к окну)
-    if (typeof sliderInterval != 'undefined') {
+    if (typeof sliderInterval !== 'undefined') {
         clearInterval(sliderInterval);
     }
 }
@@ -136,7 +136,7 @@ onfocus = function (e) {
     Array.prototype.forEach.call(
         document.getElementsByClassName("slider")[0].getElementsByTagName("INPUT"),
         function (el) {
-            if (el.value != '') {
+            if (el.value != '' && el.type == 'text') {
                 inputsEmpty = false;
             }
         });
@@ -244,13 +244,17 @@ if (typeof document.getElementById('footer__form') !== 'undefined') {
     document.getElementById('footer__form').onsubmit = function (e) {
         e.preventDefault();
 
-        alert(`Form data:\nName: ${e.target[0].value}\nE-Mail: ${e.target[1].value}\nInfo: ${e.target[2].value}`);
+        if (isValidEmail(e.target[1].value)) {
+            alert(`Form data:\nName: ${e.target[0].value}\nE-Mail: ${e.target[1].value}\nInfo: ${e.target[2].value}`);
 
-        for (let el of e.target.children) {
-            el.style.display = 'none';
+            for (let el of e.target.children) {
+                el.style.display = 'none';
+            }
+            document.getElementById('footer__form-p').style.display = 'block';
         }
-
-        document.getElementById('footer__form-p').style.display = 'block';
+        else {
+            alert('Введите корректный e-mail');
+        }
 
         return false;
     }
@@ -262,13 +266,26 @@ if (typeof document.forms !== 'undefined') {
             f.onsubmit = function (e) {
                 e.preventDefault();
 
-                alert(e.target[0].value);
-                e.target[0].style.display = 'none';
-                e.target[1].style.display = 'none';
-                e.target.children[0].style.display = 'block';
+                if (isValidEmail(e.target[0].value)) {
+                    e.target[0].style.display = 'none';
+                    e.target[1].style.display = 'none';
+                    e.target.children[0].style.display = 'block';
+                }
+                else {
+                    alert('Введите корректный e-mail');
+                }
 
                 return false;
             }
         }
     }
+}
+
+function isValidEmail(email) {
+    const regExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
+    return regExp.test(email);
+}
+
+document.getElementById('header__button').onclick = function() {
+    scrollTo(0, document.body.scrollHeight);
 }
