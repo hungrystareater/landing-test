@@ -268,61 +268,70 @@ if (typeof document.getElementById('footer__form') !== 'undefined') {
                 el.style.display = 'none';
             }
             document.getElementById('footer__form-p').style.display = 'block';
+
+            e.target[1].style.border = '';
+            e.target[1].oninput = null;
         }
         else {
-            alert('Введите корректный e-mail');
+            e.target[1].style.border = '1px solid red';
+            e.target[1].oninput = (e) => {
+                e.target.style.border = '';
+            }
+
+            return false;
         }
-
-        return false;
     }
-}
 
-if (typeof document.forms !== 'undefined') {
-    for (let f of document.forms) {
-        if (f.id != 'footer__form') {
-            f.onsubmit = (e) => {
-                e.preventDefault();
+    if (typeof document.forms !== 'undefined') {
+        for (let f of document.forms) {
+            if (f.id != 'footer__form') {
+                f.onsubmit = (e) => {
+                    e.preventDefault();
 
-                if (isValidEmail(e.target[0].value)) {
-                    e.target[0].style.display = 'none';
-                    e.target[1].style.display = 'none';
-                    e.target.children[0].style.display = 'block';
+                    if (isValidEmail(e.target[0].value)) {
+                        e.target[0].style.display = 'none';
+                        e.target[1].style.display = 'none';
+                        e.target.children[0].style.display = 'block';
+                        e.target[0].parentElement.style.border = '';
+                        e.target[0].oninput = null;
+                    }
+                    else {
+                        e.target[0].parentElement.style.border = '1px solid red';
+                        e.target[0].oninput = (e) => { e.target.parentElement.style.border = ''; }
+                    }
+
+                    return false;
                 }
-                else {
-                    alert('Введите корректный e-mail');
-                }
-
-                return false;
             }
         }
     }
-}
 
-//украл из npm email-validator package
-function isValidEmail(email) {
-    const tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+    //украл из npm email-validator package
+    function isValidEmail(email) {
+        const tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
-    if (!email)
-        return false;
+        if (!email)
+            return false;
 
-    if (email.length > 254)
-        return false;
+        if (email.length > 254)
+            return false;
 
-    let valid = tester.test(email);
-    if (!valid)
-        return false;
+        let valid = tester.test(email);
+        if (!valid)
+            return false;
 
-    let parts = email.split("@");
-    if (parts[0].length > 64)
-        return false;
+        let parts = email.split("@");
+        if (parts[0].length > 64)
+            return false;
 
-    let domainParts = parts[1].split(".");
-    if (domainParts.some((part) => { return part.length > 63; }))
-        return false;
+        let domainParts = parts[1].split(".");
+        if (domainParts.some((part) => { return part.length > 63; }))
+            return false;
 
-    return true;
-}
+        return true;
+    }
 
-document.getElementById('header__button').onclick = () => {
-    scrollTo(0, document.body.scrollHeight);
+    document.getElementById('header__button').onclick = () => {
+        scrollTo(0, document.body.scrollHeight);
+    }
 }
