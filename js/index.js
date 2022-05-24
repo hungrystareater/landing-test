@@ -130,17 +130,19 @@ onblur = function () {
 }
 
 onfocus = function (e) {
-    let inputsEmpty = true;
-    //проверяем не ввел ли юзер что-то прежде чем запустить слайдшоу в слайдере при возвращении к окну
-    Array.prototype.forEach.call(
-        document.getElementsByClassName("slider")[0].getElementsByTagName("INPUT"),
-        function (el) {
-            if (el.value != '' && el.type == 'text') {
-                inputsEmpty = false;
-            }
-        });
-    if (inputsEmpty) {
-        sliderInterval = setInterval(nextFrame, 5000);
+    if (typeof document.getElementsByClassName("slider")[0] !== 'undefined') {
+        let inputsEmpty = true;
+        //проверяем не ввел ли юзер что-то прежде чем запустить слайдшоу в слайдере при возвращении к окну
+        Array.prototype.forEach.call(
+            document.getElementsByClassName("slider")[0].getElementsByTagName("INPUT"),
+            function (el) {
+                if (el.value != '' && el.type == 'text') {
+                    inputsEmpty = false;
+                }
+            });
+        if (inputsEmpty) {
+            sliderInterval = setInterval(nextFrame, 5000);
+        }
     }
 }
 
