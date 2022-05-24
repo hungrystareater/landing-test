@@ -292,12 +292,12 @@ if (typeof document.getElementById('footer__form') !== 'undefined') {
                         e.target[0].style.display = 'none';
                         e.target[1].style.display = 'none';
                         e.target.children[0].style.display = 'block';
-                        e.target[0].parentElement.style.border = '';
+                        e.target[0].style.color = '';
                         e.target[0].oninput = null;
                     }
                     else {
-                        e.target[0].parentElement.style.border = '1px solid red';
-                        e.target[0].oninput = (e) => { e.target.parentElement.style.border = ''; }
+                        e.target[0].style.color = 'red';
+                        e.target[0].oninput = (e) => { e.target.style.color = ''; }
                     }
 
                     return false;
