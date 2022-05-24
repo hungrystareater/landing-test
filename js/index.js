@@ -5,7 +5,6 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
 //функция плавного подъезжания к следующему кадру
 async function glide(el, startOffset, endOffset, duration) {
     if (el === null) return;
@@ -217,24 +216,40 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
     document.getElementsByClassName("header__burger")[0].children[0].onchange = function (e) {
         if (document.getElementsByClassName("mobile-navscreen")[0].style.display != "block") {
             document.getElementsByClassName("mobile-navscreen")[0].style.display = "block";
+
+            //ландшафтная мобильная менюшка будет со скроллом
+            if (innerWidth < innerHeight) {
+                /* document.getElementsByClassName("mobile-navscreen")[0].style.height = '100vw';
+                document.getElementsByClassName("header")[0].style.height = '100vh'; */
+                document.getElementsByClassName("header")[0].classList.add('header__opened');
+                if (innerWidth > 768) {
+                    document.getElementsByClassName("mobile-navscreen")[0].style.height = `${innerHeight - 81}px`;
+                }
+                else {
+                    document.getElementsByClassName("mobile-navscreen")[0].style.height = `${innerHeight - 56}px`;
+                }
+            }
+            else {
+                document.getElementsByClassName("header")[0].classList.add('header__opened');
+                if (innerWidth > 768) {
+                    document.getElementsByClassName("mobile-navscreen")[0].style.height = `${innerWidth - 81}px`;
+                }
+                else {
+                    document.getElementsByClassName("mobile-navscreen")[0].style.height = `${innerWidth - 56}px`;
+                }
+            }
         }
         else {
-            document.getElementsByClassName("mobile-navscreen")[0].style.display = "none";
-        }
-    }
-
-    document.getElementsByClassName("mobile-navscreen")[0].children[0].onchange = function (e) {
-        if (document.getElementsByClassName("mobile-navscreen")[0].style.display != "block") {
-            document.getElementsByClassName("mobile-navscreen")[0].style.display = "block";
-        }
-        else {
-            document.getElementsByClassName("mobile-navscreen")[0].style.display = "none";
-
+            document.getElementsByClassName("mobile-navscreen")[0].style.display = "";
+            document.getElementsByClassName("header")[0].classList.remove('header__opened');
+            document.getElementsByClassName("mobile-navscreen")[0].style.height = ``;
         }
     }
     document.getElementsByClassName("mobile-navscreen")[0].onclick = function (e) {
         document.getElementsByClassName("header__burger")[0].children[0].checked = false;
         document.getElementsByClassName("mobile-navscreen")[0].style.display = "none";
+        document.getElementsByClassName("header")[0].classList.remove('header__opened');
+        document.getElementsByClassName("mobile-navscreen")[0].style.height = ``;
     }
 }
 
@@ -286,6 +301,6 @@ function isValidEmail(email) {
     return regExp.test(email);
 }
 
-document.getElementById('header__button').onclick = function() {
+document.getElementById('header__button').onclick = function () {
     scrollTo(0, document.body.scrollHeight);
 }
