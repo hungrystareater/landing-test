@@ -71,7 +71,7 @@ function nextFrameWrapper() {
             for (let el of e.target.parentElement.children) {
                 el.disabled = true;
             }
-            setTimeout(function () {
+            setTimeout(() => {
                 for (let el of e.target.parentElement.children) {
                     el.disabled = false;
                 }
@@ -82,7 +82,7 @@ function nextFrameWrapper() {
         }
     });
 
-    return function () {
+    return () => {
         if (frameCount > 1) {
             //если последний кадр - возвращаемся к первому
             if (framePosition === frameCount - 1) {
@@ -107,7 +107,7 @@ function nextFrameWrapper() {
     }
 }
 
-onresize = function () {
+onresize = () => {
     if (typeof sliderInterval !== 'undefined' &&
         document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
         clearInterval(sliderInterval);
@@ -121,7 +121,7 @@ onresize = function () {
     }
 }
 
-onblur = function () {
+onblur = () => {
     //останавливаем показ слайдов при дефокусе окна чтобы не было большой очереди коллбэков 
     //из-за setInterval (будет истеричное перематывание после возвращания к окну)
     if (typeof sliderInterval !== 'undefined') {
@@ -129,7 +129,7 @@ onblur = function () {
     }
 }
 
-onfocus = function (e) {
+onfocus = (e) => {
     if (typeof document.getElementsByClassName("slider")[0] !== 'undefined') {
         let inputsEmpty = true;
         //проверяем не ввел ли юзер что-то прежде чем запустить слайдшоу в слайдере при возвращении к окну
@@ -151,11 +151,11 @@ sliderInterval = setInterval(nextFrame, 5000);
 
 //функция горизонтального скролла cases__panel в мобильной и планшетной версии
 if (typeof document.getElementsByClassName("cases__panel")[0] !== 'undefined') {
-    document.getElementsByClassName("cases__panel")[0].ontouchmove = (function () {
+    document.getElementsByClassName("cases__panel")[0].ontouchmove = (() => {
         if (screen.availWidth < 1440) {
             let cXPrev = undefined; //x предыдущего ивента
             document.getElementsByClassName("cases__panel")[0].style.left = '0px';
-            return function (e) {
+            return (e) => {
                 if (cXPrev === undefined) cXPrev = e.changedTouches[0].clientX;
                 else {
                     //обнуляем cX когда палец отлипает от экрана
@@ -215,7 +215,7 @@ if (typeof document.getElementsByClassName("cases__panel")[0] !== 'undefined') {
 //функции для мобильной менюшки
 if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' &&
     typeof document.getElementsByClassName("header__mobile-navscreen")[0] !== 'undefined') {
-    document.getElementsByClassName("header__burger")[0].children[0].onchange = function (e) {
+    document.getElementsByClassName("header__burger")[0].children[0].onchange = (e) => {
         if (document.getElementsByClassName("header__mobile-navscreen")[0].style.display != "block") {
             document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "block";
 
@@ -248,7 +248,7 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
             document.getElementsByClassName("header__mobile-navscreen")[0].style.height = ``;
         }
     }
-    document.getElementsByClassName("header__mobile-navscreen")[0].onclick = function (e) {
+    document.getElementsByClassName("header__mobile-navscreen")[0].onclick = (e) => {
         document.getElementsByClassName("header__burger")[0].children[0].checked = false;
         document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "none";
         document.getElementsByClassName("header")[0].classList.remove('header__opened');
@@ -259,7 +259,7 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
 
 //функции для форм
 if (typeof document.getElementById('footer__form') !== 'undefined') {
-    document.getElementById('footer__form').onsubmit = function (e) {
+    document.getElementById('footer__form').onsubmit = (e) => {
         e.preventDefault();
 
         if (isValidEmail(e.target[1].value)) {
@@ -281,7 +281,7 @@ if (typeof document.getElementById('footer__form') !== 'undefined') {
 if (typeof document.forms !== 'undefined') {
     for (let f of document.forms) {
         if (f.id != 'footer__form') {
-            f.onsubmit = function (e) {
+            f.onsubmit = (e) => {
                 e.preventDefault();
 
                 if (isValidEmail(e.target[0].value)) {
@@ -304,6 +304,6 @@ function isValidEmail(email) {
     return regExp.test(email);
 }
 
-document.getElementById('header__button').onclick = function () {
+document.getElementById('header__button').onclick = () => {
     scrollTo(0, document.body.scrollHeight);
 }
