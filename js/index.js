@@ -83,24 +83,21 @@ function nextFrameWrapper() {
 
     return () => {
         if (frameCount > 1) {
+            let sliderButtonContainer = document.getElementsByClassName("slider__button-container")[0];
             //если последний кадр - возвращаемся к первому
             if (framePosition === frameCount - 1) {
                 glide(frameRow, -frameOffsets[framePosition], -frameOffsets[0], slideDuration);
                 //перекрашиваем кнопку соответствующею кадру
-                document.getElementsByClassName("slider__button-container")[0]
-                    .children[framePosition].classList.remove("slider__button__displayed");
+                sliderButtonContainer.children[framePosition].classList.remove("slider__button__displayed");
                 framePosition = 0;
-                document.getElementsByClassName("slider__button-container")[0]
-                    .children[framePosition].classList.add("slider__button__displayed");
+                sliderButtonContainer.children[framePosition].classList.add("slider__button__displayed");
             }
             else {
                 glide(frameRow, -frameOffsets[framePosition], -frameOffsets[framePosition + 1], slideDuration);
 
-                document.getElementsByClassName("slider__button-container")[0]
-                    .children[framePosition].classList.remove("slider__button__displayed");
+                sliderButtonContainer.children[framePosition].classList.remove("slider__button__displayed");
                 framePosition++;
-                document.getElementsByClassName("slider__button-container")[0]
-                    .children[framePosition].classList.add("slider__button__displayed");
+                sliderButtonContainer.children[framePosition].classList.add("slider__button__displayed");
             }
         }
     }
@@ -110,12 +107,8 @@ onresize = () => {
     if (typeof sliderInterval !== 'undefined' &&
         document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
         clearInterval(sliderInterval);
-
-
         nextFrame = nextFrameWrapper();
-
         document.getElementsByClassName("slider__frame-row")[0].style.left = '0px';
-
         sliderInterval = setInterval(nextFrame, 5000);
     }
 }
@@ -152,49 +145,50 @@ sliderInterval = setInterval(nextFrame, 5000);
 if (typeof document.getElementsByClassName("cases__panel")[0] !== 'undefined') {
     document.getElementsByClassName("cases__panel")[0].ontouchmove = (() => {
         if (screen.availWidth < 1440) {
+            let casesPanel = document.getElementsByClassName("cases__panel")[0];
             let cXPrev = undefined; //x предыдущего ивента
-            document.getElementsByClassName("cases__panel")[0].style.left = '0px';
+            casesPanel.style.left = '0px';
             return (e) => {
                 if (cXPrev === undefined) cXPrev = e.changedTouches[0].clientX;
                 else {
-                    //обнуляем cX когда палец отлипает от экрана
+                    //обнуляем cXPrev когда палец отлипает от экрана
                     if (e.type === 'touchend') {
                         cXPrev = undefined;
                         return;
                     }
                     //проверяем, чтобы левая граница cases__panel не уезжала правее левой границы wrapper'а, a правая левее правой
-                    if ((parseInt(document.getElementsByClassName("cases__panel")[0].style.left) - cXPrev + e.changedTouches[0].clientX <= 0) &&
-                        (document.getElementsByClassName("cases__panel")[0].getBoundingClientRect().right >
-                            document.getElementsByClassName("cases__panel")[0].parentElement.getBoundingClientRect().right)) {
-                        document.getElementsByClassName("cases__panel")[0].style.left =
-                            `${parseInt(document.getElementsByClassName("cases__panel")[0].style.left) - cXPrev + e.changedTouches[0].clientX}px`;
+                    if ((parseInt(casesPanel.style.left) - cXPrev + e.changedTouches[0].clientX <= 0) &&
+                        (casesPanel.getBoundingClientRect().right >
+                            casesPanel.parentElement.getBoundingClientRect().right)) {
+                        casesPanel.style.left =
+                            `${parseInt(casesPanel.style.left) - cXPrev + e.changedTouches[0].clientX}px`;
                         cXPrev = e.changedTouches[0].clientX;
                     }
                     //избавляемся от застревания правой границы cases__panel появляющегося благодаря предыдущему if 
                     //когда граница совпадает с родительским элементом
-                    if (document.getElementsByClassName("cases__panel")[0].getBoundingClientRect().right <=
-                        document.getElementsByClassName("cases__panel")[0].parentElement.getBoundingClientRect().right &&
+                    if (casesPanel.getBoundingClientRect().right <=
+                        casesPanel.parentElement.getBoundingClientRect().right &&
                         (cXPrev - e.changedTouches[0].clientX < 0)) {
-                        document.getElementsByClassName("cases__panel")[0].style.left =
-                            `${parseInt(document.getElementsByClassName("cases__panel")[0].style.left) - cXPrev + e.changedTouches[0].clientX}px`;
+                        casesPanel.style.left =
+                            `${parseInt(casesPanel.style.left) - cXPrev + e.changedTouches[0].clientX}px`;
                         cXPrev = e.changedTouches[0].clientX;
                     }
                 }
 
                 //если резко дернуть блок влево, то правая граница все равно заезжает за правую границу wrapper'a
                 //фиксим (если значение левее, то ровняем правые границы)
-                if (document.getElementsByClassName("cases__panel")[0].getBoundingClientRect().right <
-                    document.getElementsByClassName("cases__panel")[0].parentElement.getBoundingClientRect().right) {
-                    document.getElementsByClassName("cases__panel")[0].style.left =
-                        `-${document.getElementsByClassName("cases__panel")[0].getBoundingClientRect().width -
-                        document.getElementsByClassName("cases__panel")[0].parentElement.getBoundingClientRect().width}px`;
+                if (casesPanel.getBoundingClientRect().right <
+                    casesPanel.parentElement.getBoundingClientRect().right) {
+                    casesPanel.style.left =
+                        `-${casesPanel.getBoundingClientRect().width -
+                        casesPanel.parentElement.getBoundingClientRect().width}px`;
                 }
 
                 //далее перекрашиваются круглишки под панелью в зависимости от того насколько проскроллено
-                let maxOffsetLeft = document.getElementsByClassName("cases__panel")[0].getBoundingClientRect().width -
-                    document.getElementsByClassName("cases__panel")[0].parentElement.getBoundingClientRect().width + 1;
-                let offsetLeft = Math.abs(parseInt(document.getElementsByClassName("cases__panel")[0].style.left));
-                let elemCount = document.getElementsByClassName("cases__panel")[0].children.length;
+                let maxOffsetLeft = casesPanel.getBoundingClientRect().width -
+                    casesPanel.parentElement.getBoundingClientRect().width + 1;
+                let offsetLeft = Math.abs(parseInt(casesPanel.style.left));
+                let elemCount = casesPanel.children.length;
 
                 //удаляем класс раскрашивания со всех круглишков
                 for (let el of document.getElementsByClassName("cases__button-container")[0].children) {
@@ -215,36 +209,40 @@ if (typeof document.getElementsByClassName("cases__panel")[0] !== 'undefined') {
 if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' &&
     typeof document.getElementsByClassName("header__mobile-navscreen")[0] !== 'undefined') {
     document.getElementsByClassName("header__burger")[0].children[0].onchange = (e) => {
-        if (document.getElementsByClassName("header__mobile-navscreen")[0].style.display != "block") {
-            document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "block";
+
+        let mobileNavscreen = document.getElementsByClassName("header__mobile-navscreen")[0];
+        
+        if (mobileNavscreen.style.display != "block") {
+
+            mobileNavscreen.style.display = "block";
 
             //ландшафтная мобильная менюшка будет со скроллом
             document.getElementsByClassName("header")[0].classList.add('header__opened');
             if (innerWidth < 600 && innerHeight < 600) {
-                document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `550px`;
+                mobileNavscreen.style.height = `550px`;
                 return;
             }
             if (innerWidth < innerHeight) {
                 if (innerWidth > 768) {
-                    document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerHeight - 81}px`;
+                    mobileNavscreen.style.height = `${innerHeight - 81}px`;
                 }
                 else {
-                    document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerHeight - 56}px`;
+                    mobileNavscreen.style.height = `${innerHeight - 56}px`;
                 }
             }
             else {
                 if (innerWidth > 768) {
-                    document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerWidth - 81}px`;
+                    mobileNavscreen.style.height = `${innerWidth - 81}px`;
                 }
                 else {
-                    document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerWidth - 56}px`;
+                    mobileNavscreen.style.height = `${innerWidth - 56}px`;
                 }
             }
         }
         else {
-            document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "";
+            mobileNavscreen.style.display = "";
             document.getElementsByClassName("header")[0].classList.remove('header__opened');
-            document.getElementsByClassName("header__mobile-navscreen")[0].style.height = ``;
+            mobileNavscreen.style.height = ``;
         }
     }
     document.getElementsByClassName("header__mobile-navscreen")[0].onclick = (e) => {
