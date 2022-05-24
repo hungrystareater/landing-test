@@ -1,6 +1,5 @@
 let sliderInterval;
 
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -299,9 +298,29 @@ if (typeof document.forms !== 'undefined') {
     }
 }
 
+//украл из npm email-validator package
 function isValidEmail(email) {
-    const regExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
-    return regExp.test(email);
+    const tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+
+    if (!email)
+        return false;
+
+    if (email.length > 254)
+        return false;
+
+    let valid = tester.test(email);
+    if (!valid)
+        return false;
+
+    let parts = email.split("@");
+    if (parts[0].length > 64)
+        return false;
+
+    let domainParts = parts[1].split(".");
+    if (domainParts.some((part) => { return part.length > 63; }))
+        return false;
+
+    return true;
 }
 
 document.getElementById('header__button').onclick = () => {
