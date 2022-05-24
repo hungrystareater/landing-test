@@ -525,6 +525,7 @@ label {
 	line-height: 22px;
 	background: var(--gradient-blue);
 	background-clip: text;
+	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	border-bottom: 1px solid var(--very-blue);
 	text-decoration: none;
@@ -571,6 +572,7 @@ label {
 	line-height: 22px;
 	background: var(--gradient-blue);
 	background-clip: text;
+	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 /* Header styles end */
@@ -1363,6 +1365,7 @@ label {
 
 	background-image: var(--gradient-blue);
 	background-clip: text;
+	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
