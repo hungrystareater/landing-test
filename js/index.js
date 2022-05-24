@@ -220,8 +220,12 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
             document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "block";
 
             //ландшафтная мобильная менюшка будет со скроллом
+            document.getElementsByClassName("header")[0].classList.add('header__opened');
+            if (innerWidth < 600 && innerHeight < 600) {
+                document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `550px`;
+                return;
+            }
             if (innerWidth < innerHeight) {
-                document.getElementsByClassName("header")[0].classList.add('header__opened');
                 if (innerWidth > 768) {
                     document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerHeight - 81}px`;
                 }
@@ -230,7 +234,6 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
                 }
             }
             else {
-                document.getElementsByClassName("header")[0].classList.add('header__opened');
                 if (innerWidth > 768) {
                     document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerWidth - 81}px`;
                 }
@@ -249,7 +252,7 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
         document.getElementsByClassName("header__burger")[0].children[0].checked = false;
         document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "none";
         document.getElementsByClassName("header")[0].classList.remove('header__opened');
-        document.getElementsByClassName("header__mobile-navscreen")[0].style.height = ``;
+        document.getElementsByClassName("header__mobile-navscreen")[0].style.height = '';
     }
 }
 

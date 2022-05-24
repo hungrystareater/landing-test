@@ -2048,6 +2048,10 @@ label {
 		margin-bottom: 32px;
 	}
 
+	.header__mobile-navscreen-list li:nth-last-child(1) {
+		margin-bottom: 0px;
+	}
+
 	.header__mobile-navscreen-list li a {
 		font-family: 'Avenir-Next';
 		font-style: normal;
