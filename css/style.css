@@ -429,7 +429,6 @@ label {
 }
 
 /* Header styles start */
-
 .header {
 	z-index: 2;
 	top: 0;
@@ -510,10 +509,6 @@ label {
 	flex-wrap: wrap;
 }
 
-/* .header__lang:first-child {
-	margin-right: 12px;
-} */
-
 .header__lang-item-link {
 	font-size: 16px;
 	line-height: 22px;
@@ -529,7 +524,7 @@ label {
 	font-size: 16px;
 	line-height: 22px;
 	background: var(--gradient-blue);
-	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	border-bottom: 1px solid var(--very-blue);
 	text-decoration: none;
@@ -537,10 +532,6 @@ label {
 
 .header__button {
 	padding: 13px 28px 13px 28px;
-
-	/* border: 1px solid var(--blue);
-	border-radius: 44px;
-	background: transparent; */
 
 	position: relative;
 	background: white;
@@ -579,10 +570,9 @@ label {
 	font-size: 16px;
 	line-height: 22px;
 	background: var(--gradient-blue);
-	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-
 /* Header styles end */
 
 /* Mobile-navscreen styles start */
@@ -590,7 +580,6 @@ label {
 	display: none;
 	z-index: 2;
 }
-
 /* Mobile-navscreen styles end */
 
 /* Slider styles start */
@@ -853,10 +842,9 @@ label {
 	border: none;
 	background: var(--gradient-blue);
 }
-
 /* Slider styles end */
 
-/* offer section style begin */
+/* Offer section style begin */
 .offer {
 	margin-top: 140px;
 }
@@ -908,8 +896,7 @@ label {
 	display: block;
 	width: 530px;
 }
-
-/* offer section style begin */
+/* Offer section style begin */
 
 
 /* Description section style begin */
@@ -989,7 +976,6 @@ label {
 	transform: translate(-64%, 39%);
 	z-index: -1;
 }
-
 /* Description section style end */
 
 /* Automate section style begin */
@@ -1131,7 +1117,6 @@ label {
 	-webkit-box-shadow: var(--black-shadow);
 	box-shadow: var(--black-shadow);
 }
-
 /* Automate section style end */
 
 /* Banks section style begin */
@@ -1220,7 +1205,6 @@ label {
 .banks__list img {
 	margin-right: 32px;
 }
-
 /* Banks section style end */
 
 /* Audience section style begin */
@@ -1296,7 +1280,6 @@ label {
 	transform: translate(0%, 30%);
 	z-index: -1;
 }
-
 /* Audience section style end */
 
 /* Cases section style begin */
@@ -1334,7 +1317,6 @@ label {
 .cases__item {
 	width: 346px;
 	min-height: 297px;
-	/* margin-left: 30px; */
 	padding: 30px 0 0 24px;
 	border: 1px solid var(--border-light-blue);
 	display: -webkit-box;
@@ -1380,7 +1362,7 @@ label {
 	letter-spacing: 0.369231px;
 
 	background-image: var(--gradient-blue);
-	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
@@ -1403,7 +1385,6 @@ label {
 	transform: translate(0%, -70%);
 	z-index: -1;
 }
-
 /* Cases section style end */
 
 /* Tariffs section style start */
@@ -1551,7 +1532,6 @@ label {
 	-webkit-box-shadow: var(--black-shadow);
 	box-shadow: var(--black-shadow);
 }
-
 /* Tariffs section style end */
 
 /* Coming soon section style start */
@@ -1634,7 +1614,6 @@ label {
 	margin-top: 40px;
 	text-align: center;
 }
-
 /* Coming soon section style end */
 
 /* Safety soon section style begin */
@@ -1690,7 +1669,6 @@ label {
 	letter-spacing: 0.713846px;
 	margin-top: 28px;
 }
-
 /* Safety soon section style end */
 
 /* Footer style start */
@@ -1910,11 +1888,9 @@ label {
 .footer__confidentiality:visited {
 	color: var(--very-blue);
 }
-
 /* Footer style end */
 
 @media only screen and (max-width: 1440px) {
-
 	/* For tablet: */
 	.wrapper {
 		max-width: 638px;
@@ -2041,7 +2017,6 @@ label {
 		-ms-transform: rotate(-45deg) translate(0, 7px);
 		transform: rotate(-45deg) translate(0, 7px);
 	}
-
 	/* HEADER: */
 
 	/*MOBILE NAVIGATION SCREEN */
@@ -2104,12 +2079,9 @@ label {
 		border: none;
 		border-radius: 44px;
 	}
-
 	/* NAVIGATION SCREEN: */
 
 	/* SLIDER: */
-	.slider {}
-
 	.slider__money,
 	.slider__pig {
 		-webkit-box-pack: initial;
@@ -2187,7 +2159,6 @@ label {
 		margin-left: 10px;
 		margin-right: 10px;
 	}
-
 	/* SLIDER: */
 
 	/* OFFER: */
@@ -2212,7 +2183,6 @@ label {
 	.offer__image {
 		text-align: center;
 	}
-
 	/* OFFER: */
 
 	/* DESCRIPTION: */
@@ -2238,7 +2208,6 @@ label {
 	.description__bg-pic-2 {
 		display: none;
 	}
-
 	/* DESCRIPTION: */
 
 	/* AUTOMATE: */
@@ -2265,7 +2234,6 @@ label {
 		margin: 0 auto;
 		max-width: 440px;
 	}
-
 	/* AUTOMATE: */
 
 	/* BANKS: */
@@ -2294,7 +2262,6 @@ label {
 	.banks__panel div:last-child {
 		margin-bottom: 0px;
 	}
-
 	/* BANKS: */
 
 	/* AUDIENCE: */
@@ -2324,7 +2291,6 @@ label {
 		-ms-transform: translate(0%, -110%);
 		transform: translate(0%, -110%);
 	}
-
 	/* AUDIENCE: */
 
 	/* CASES: */
@@ -2393,7 +2359,6 @@ label {
 
 		transform: translate(0, -1.5px);
 	}
-
 	/* CASES: */
 
 	/* TARIFFS: */
@@ -2563,7 +2528,6 @@ label {
 		-webkit-box-shadow: var(--black-shadow);
 		box-shadow: var(--black-shadow);
 	}
-
 	/* TARIFFS: */
 
 	/* COMING-SOON: */
@@ -2597,7 +2561,6 @@ label {
 		margin-top: 22px;
 		margin-bottom: 32px;
 	}
-
 	/* COMING-SOON: */
 
 	/* SAFETY: */
@@ -2649,7 +2612,6 @@ label {
 		letter-spacing: 0.443077px;
 		margin: 0;
 	}
-
 	/* SAFETY: */
 
 	/* FOOTER: */
@@ -2715,12 +2677,10 @@ label {
 	.footer {
 		padding-bottom: 40px;
 	}
-
 	/* FOOTER: */
 }
 
 @media only screen and (max-width: 768px) {
-
 	/* For mobile: */
 	body {
 		padding-top: 10px;
@@ -2731,6 +2691,7 @@ label {
 		width: 87.5%;
 	}
 
+	/* HEADER BEGIN */
 	.header {
 		padding: 10px 0;
 	}
@@ -2745,10 +2706,9 @@ label {
 		height: 100vh;
 		overflow: scroll;
 	}
+	/* HEADER END */
 
 	/* SLIDER: */
-	.slider {}
-
 	.slider__money,
 	.slider__pig,
 	.slider__snapshot,
@@ -2791,7 +2751,6 @@ label {
 	.slider__phone-form {
 		display: none;
 	}
-
 	/* SLIDER: */
 
 	/* OFFER: */
@@ -2807,7 +2766,6 @@ label {
 	.offer__paragraph {
 		width: 100%;
 	}
-
 	/* OFFER */
 
 	/* DESCRIPTION: */
@@ -2839,7 +2797,6 @@ label {
 	.description__panel .description__item:last-child {
 		margin-bottom: 0px;
 	}
-
 	/* DESCRIPTION: */
 
 	/* AUTOMATE: */
@@ -2861,7 +2818,6 @@ label {
 		line-height: 36px;
 		text-align: center;
 		letter-spacing: 0.44px;
-		/* margin-top: 60px; */
 	}
 
 	.automate__paragraph {
@@ -2876,7 +2832,6 @@ label {
 	.automate__form input[type=submit] {
 		padding: 12px 27px 12px 27px;
 	}
-
 	/* AUTOMATE: */
 
 	/* BANKS: */
@@ -2911,7 +2866,6 @@ label {
 	.banks__list li:last-child {
 		margin-bottom: 20px;
 	}
-
 	/* BANKS: */
 
 	/* AUDIENCE: */
@@ -2955,7 +2909,6 @@ label {
 		line-height: 20px;
 		letter-spacing: 0.443077px;
 	}
-
 	/* AUDIENCE: */
 
 	/* CASES: */
@@ -2983,7 +2936,6 @@ label {
 		line-height: 24px;
 		letter-spacing: 0.44px;
 	}
-
 	/* CASES: */
 
 	/* TARIFFS: */
@@ -3020,7 +2972,6 @@ label {
 	.tariffs-mobile__form input[type=submit] {
 		padding: 12px 27px 12px 27px;
 	}
-
 	/* TARIFFS: */
 
 	/* COMING-SOON: */
@@ -3070,7 +3021,6 @@ label {
 		letter-spacing: 0.44px;
 		margin-top: 30px;
 	}
-
 	/* COMING-SOON: */
 
 	/* SAFETY: */
@@ -3116,7 +3066,6 @@ label {
 		width: 100%;
 		padding-left: 0;
 	}
-
 	/* SAFETY: */
 
 	/* FOOTER: */
@@ -3183,7 +3132,6 @@ label {
 	.footer__copyright {
 		margin-top: 15px;
 	}
-
 	/* FOOTER: */
 }
 
