@@ -214,44 +214,42 @@ if (typeof document.getElementsByClassName("cases__panel")[0] !== 'undefined') {
 
 //функции для мобильной менюшки
 if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' &&
-    typeof document.getElementsByClassName("mobile-navscreen")[0] !== 'undefined') {
+    typeof document.getElementsByClassName("header__mobile-navscreen")[0] !== 'undefined') {
     document.getElementsByClassName("header__burger")[0].children[0].onchange = function (e) {
-        if (document.getElementsByClassName("mobile-navscreen")[0].style.display != "block") {
-            document.getElementsByClassName("mobile-navscreen")[0].style.display = "block";
+        if (document.getElementsByClassName("header__mobile-navscreen")[0].style.display != "block") {
+            document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "block";
 
             //ландшафтная мобильная менюшка будет со скроллом
             if (innerWidth < innerHeight) {
-                /* document.getElementsByClassName("mobile-navscreen")[0].style.height = '100vw';
-                document.getElementsByClassName("header")[0].style.height = '100vh'; */
                 document.getElementsByClassName("header")[0].classList.add('header__opened');
                 if (innerWidth > 768) {
-                    document.getElementsByClassName("mobile-navscreen")[0].style.height = `${innerHeight - 81}px`;
+                    document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerHeight - 81}px`;
                 }
                 else {
-                    document.getElementsByClassName("mobile-navscreen")[0].style.height = `${innerHeight - 56}px`;
+                    document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerHeight - 56}px`;
                 }
             }
             else {
                 document.getElementsByClassName("header")[0].classList.add('header__opened');
                 if (innerWidth > 768) {
-                    document.getElementsByClassName("mobile-navscreen")[0].style.height = `${innerWidth - 81}px`;
+                    document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerWidth - 81}px`;
                 }
                 else {
-                    document.getElementsByClassName("mobile-navscreen")[0].style.height = `${innerWidth - 56}px`;
+                    document.getElementsByClassName("header__mobile-navscreen")[0].style.height = `${innerWidth - 56}px`;
                 }
             }
         }
         else {
-            document.getElementsByClassName("mobile-navscreen")[0].style.display = "";
+            document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "";
             document.getElementsByClassName("header")[0].classList.remove('header__opened');
-            document.getElementsByClassName("mobile-navscreen")[0].style.height = ``;
+            document.getElementsByClassName("header__mobile-navscreen")[0].style.height = ``;
         }
     }
-    document.getElementsByClassName("mobile-navscreen")[0].onclick = function (e) {
+    document.getElementsByClassName("header__mobile-navscreen")[0].onclick = function (e) {
         document.getElementsByClassName("header__burger")[0].children[0].checked = false;
-        document.getElementsByClassName("mobile-navscreen")[0].style.display = "none";
+        document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "none";
         document.getElementsByClassName("header")[0].classList.remove('header__opened');
-        document.getElementsByClassName("mobile-navscreen")[0].style.height = ``;
+        document.getElementsByClassName("header__mobile-navscreen")[0].style.height = ``;
     }
 }
 

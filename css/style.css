@@ -586,7 +586,7 @@ label {
 /* Header styles end */
 
 /* Mobile-navscreen styles start */
-.mobile-navscreen {
+.header__mobile-navscreen {
 	display: none;
 	z-index: 2;
 }
@@ -2045,14 +2045,14 @@ label {
 	/* HEADER: */
 
 	/*MOBILE NAVIGATION SCREEN */
-	.mobile-navscreen {
+	.header__mobile-navscreen {
 		width: 100%;
 		height: 100%;
 		background: white;
 		height: 100vh;
 	}
 
-	.mobile-navscreen__list {
+	.header__mobile-navscreen-list {
 		height: 100%;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -2069,11 +2069,11 @@ label {
 		align-items: center;
 	}
 
-	.mobile-navscreen__list li {
+	.header__mobile-navscreen-list li {
 		margin-bottom: 32px;
 	}
 
-	.mobile-navscreen__list li a {
+	.header__mobile-navscreen-list li a {
 		font-family: 'Avenir-Next';
 		font-style: normal;
 		font-weight: 500;
@@ -2086,7 +2086,7 @@ label {
 		color: var(--navscreen-link);
 	}
 
-	.mobile-navscreen__list li button {
+	.header__mobile-navscreen-list li button {
 		background: var(--gradient-blue);
 
 		font-family: 'Avenir-Next';
