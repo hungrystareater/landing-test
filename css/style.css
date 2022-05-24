@@ -2048,7 +2048,7 @@ label {
 		margin-bottom: 32px;
 	}
 
-	.header__mobile-navscreen-list li:nth-last-child(1) {
+	.header__mobile-navscreen-list li:last-child {
 		margin-bottom: 0px;
 	}
 
