@@ -50,6 +50,7 @@ function nextFrameWrapper() {
     frameRow.addEventListener('click', (e) => {
         if (e.target.tagName == 'INPUT') {
             clearInterval(sliderInterval);
+            sliderInterval = undefined;
         }
     });
 
@@ -59,6 +60,7 @@ function nextFrameWrapper() {
             let buttonIndex = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
 
             clearInterval(sliderInterval);
+            sliderInterval = undefined;
             //раскрашиваем кнопку под номером активного кадра
             for (let el of e.target.parentElement.children) {
                 el.classList.remove('slider__button__displayed');
@@ -116,6 +118,7 @@ onresize = (() => {
             if (innerWidth != clientInnerWidthPrevious) {
                 clientInnerWidthPrevious = innerWidth;
                 clearInterval(sliderInterval);
+                sliderInterval = undefined;
                 nextFrame = nextFrameWrapper();
                 document.getElementsByClassName("slider__frame-row")[0].style.left = '0px';
                 sliderInterval = setInterval(nextFrame, 5000);
@@ -134,11 +137,13 @@ onblur = () => {
     //из-за setInterval (будет истеричное перематывание после возвращания к окну)
     if (typeof sliderInterval !== 'undefined') {
         clearInterval(sliderInterval);
+        sliderInterval = undefined;
     }
 }
 
 onfocus = (e) => {
-    if (typeof document.getElementsByClassName("slider")[0] !== 'undefined') {
+    if (typeof document.getElementsByClassName("slider")[0] !== 'undefined' &&
+    sliderInterval === undefined) {
         let inputsEmpty = true;
         //проверяем не ввел ли юзер что-то прежде чем запустить слайдшоу в слайдере при возвращении к окну
         Array.prototype.forEach.call(
