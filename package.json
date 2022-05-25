@@ -1,18 +1,41 @@
 {
   "name": "landing-test",
-  "version": "0.0.0",
-  "description": "null",
-  "main": "./js/index.js",
+  "version": "0.1.0",
+  "description": "",
+  "main": "build/index.html",
+  "author": "",
   "scripts": {
-    "test": "test"
+    "uglify": "uglifyjs src/js/index.js -o build/js/index.js",
+    "mkjsdir": "mkdirp build/js",
+    "build:sass": "sass  --no-source-map src/sass/style.scss:build/css/style.css",
+    "copy:img": "copyfiles -u 1 \"./src/img/**/*\" build",
+    "copy:fonts": "copyfiles -u 1 \"./src/fonts/**/*\" build",
+    "copy:js": "copyfiles -u 1 \"./src/js/**/*\" build",
+    "copy:html": "copyfiles -u 1 ./src/*.html build",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch:img": "onchange \"./src/img/**/*\" -- npm run copy:img",
+    "watch:fonts": "onchange \"./src/fonts/**/*\" -- npm run copy:fonts",
+    "watch:js": "onchange \"./src/js/**/*\" -- npm run copy:js",
+    "watch:html": "onchange 'src/*.html' -- npm run copy:html",
+    "watch:sass": "sass  --no-source-map --watch src/sass:build/css",
+    "watch": "npm-run-all --parallel watch:*",
+    "serve": "browser-sync start --server build --files build",
+    "start": "npm-run-all copy --parallel watch serve",
+    "build": "npm-run-all copy:html copy:img copy:fonts build:* postbuild mkjsdir uglify",
+    "postbuild": "postcss build/css/*.css -u autoprefixer cssnano -r --no-map"
+
   },
-  "repository": {
-    "type": "git",
-    "url": "landing-test"
-  },
-  "keywords": [
-    "null"
-  ],
-  "author": "null",
-  "license": "MIT"
+  "dependencies": {
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^5.0.17",
+    "make-dir": "^3.1.0",
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.8",
+    "uglify-js": "^3.15.5"
+  }
 }
