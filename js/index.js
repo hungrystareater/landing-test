@@ -103,15 +103,31 @@ function nextFrameWrapper() {
     }
 }
 
-onresize = () => {
-    if (typeof sliderInterval !== 'undefined' &&
-        document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
-        clearInterval(sliderInterval);
-        nextFrame = nextFrameWrapper();
-        document.getElementsByClassName("slider__frame-row")[0].style.left = '0px';
-        sliderInterval = setInterval(nextFrame, 5000);
+//защита от поломки слайдера при ресайзе (когда ширина кадра меняется нужно пересчитать 
+//переменные функции nextFrameWrapper)
+onresize = (() => {
+    let clientInnerWidthPrevious = innerWidth;
+    //на мобильных браузерах окно ресайзится при скролле (пропадает строка адреса)
+    //поэтому тригеррим пересчет переменных nextFrameWrapper только когда произошел ресайз ширины
+    return (e) => {
+        console.log(e);
+        if (typeof sliderInterval !== 'undefined' &&
+            document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
+            if (innerWidth != clientInnerWidthPrevious) {
+                clientInnerWidthPrevious = innerWidth;
+                clearInterval(sliderInterval);
+                nextFrame = nextFrameWrapper();
+                document.getElementsByClassName("slider__frame-row")[0].style.left = '0px';
+                sliderInterval = setInterval(nextFrame, 5000);
+                //раскрашиваем первую кнопку
+                for (let el of document.getElementsByClassName("slider__button-container")[0].children) {
+                    el.classList.remove('slider__button__displayed');
+                }
+                document.getElementsByClassName("slider__button-container")[0].children[0].classList.add('slider__button__displayed');
+            }
+        }
     }
-}
+})();
 
 onblur = () => {
     //останавливаем показ слайдов при дефокусе окна чтобы не было большой очереди коллбэков 
@@ -211,7 +227,7 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
     document.getElementsByClassName("header__burger")[0].children[0].onchange = (e) => {
 
         let mobileNavscreen = document.getElementsByClassName("header__mobile-navscreen")[0];
-        
+
         if (mobileNavscreen.style.display != "block") {
 
             mobileNavscreen.style.display = "block";
