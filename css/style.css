@@ -1745,6 +1745,7 @@ label {
 }
 
 #footer__form-p {
+	max-width: 440px;
 	font-size: 18px;
 	line-height: 28px;
 	letter-spacing: 0.443077px;
