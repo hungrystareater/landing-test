@@ -767,8 +767,8 @@ label {
 
 .slider input[type=submit] {
 	padding: 12px 53px 12px 53px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 	background: -o-linear-gradient(top, #1792C7 0%, #00B8F0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 	background: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
 	border-radius: 44px;
 	border: 0;
@@ -996,8 +996,13 @@ label {
 	background-repeat: no-repeat;
 	background-position: 85% -15%;
 	padding-top: 60px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
 }
 
 .automate__h1 {
@@ -1099,8 +1104,8 @@ label {
 
 .automate__form input[type=submit] {
 	padding: 12px 53px 12px 53px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 	background: -o-linear-gradient(top, #1792C7 0%, #00B8F0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 	background: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
 	border-radius: 44px;
 	border: 0;
@@ -1519,8 +1524,8 @@ label {
 
 .tariffs__form input[type=submit] {
 	padding: 12px 53px 12px 53px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 	background: -o-linear-gradient(top, #1792C7 0%, #00B8F0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 	background: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
 	border-radius: 44px;
 	border: 0;
@@ -1646,7 +1651,9 @@ label {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: row;
@@ -1834,6 +1841,22 @@ label {
 	color: var(--blue);
 }
 
+#footer__form-name::-webkit-input-placeholder, #footer__form-email::-webkit-input-placeholder, #footer__form-textarea::-webkit-input-placeholder {
+	color: var(--blue);
+}
+
+#footer__form-name::-moz-placeholder, #footer__form-email::-moz-placeholder, #footer__form-textarea::-moz-placeholder {
+	color: var(--blue);
+}
+
+#footer__form-name:-ms-input-placeholder, #footer__form-email:-ms-input-placeholder, #footer__form-textarea:-ms-input-placeholder {
+	color: var(--blue);
+}
+
+#footer__form-name::-ms-input-placeholder, #footer__form-email::-ms-input-placeholder, #footer__form-textarea::-ms-input-placeholder {
+	color: var(--blue);
+}
+
 #footer__form-name::placeholder,
 #footer__form-email::placeholder,
 #footer__form-textarea::placeholder {
@@ -1842,8 +1865,8 @@ label {
 
 #footer__form-submit {
 	padding: 13px 28px 13px 28px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 	background: -o-linear-gradient(top, #1792C7 0%, #00B8F0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 	background: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
 	border-radius: 44px;
 	border: 0;
@@ -2220,7 +2243,9 @@ label {
 
 	/* DESCRIPTION: */
 	.description__wrapper {
-		align-items: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		display: block;
 	}
 	.description__h1 {
@@ -2264,7 +2289,10 @@ label {
 		margin-top: 110px;
 	}
 	.automate__wrapper {
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 		padding-top: 60px;
 		background-position: 130% -50%;
 	}
@@ -2578,8 +2606,8 @@ label {
 
 	.tariffs-mobile__form input[type=submit] {
 		padding: 12px 53px 12px 53px;
-		background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 		background: -o-linear-gradient(top, #1792C7 0%, #00B8F0 100%);
+		background: -webkit-gradient(linear, left top, left bottom, from(#1792C7), to(#00B8F0));
 		background: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
 		border-radius: 44px;
 		border: 0;
@@ -2635,7 +2663,9 @@ label {
 		width: 47vw;
 		margin-top: 22px;
 		margin-bottom: 32px;
-		transform: translate(30px, 0);
+		-webkit-transform: translate(30px, 0);
+		    -ms-transform: translate(30px, 0);
+		        transform: translate(30px, 0);
 	}
 
 	/* COMING-SOON: */
@@ -3123,7 +3153,9 @@ label {
 		line-height: 24px;
 		letter-spacing: 0.443077px;
 		padding-left: 33px;
-		transform: none;
+		-webkit-transform: none;
+		    -ms-transform: none;
+		        transform: none;
 	}
 
 	.coming-soon__p::before {
@@ -3257,9 +3289,6 @@ label {
 
 	/* FOOTER: */
 }
-
-
-
 
 /* LANDING TEST STYLE END */
 /* LANDING TEST STYLE END */
