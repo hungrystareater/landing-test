@@ -112,7 +112,6 @@ onresize = (() => {
     //на мобильных браузерах окно ресайзится при скролле (пропадает строка адреса)
     //поэтому тригеррим пересчет переменных nextFrameWrapper только когда произошел ресайз ширины
     return (e) => {
-        console.log(e);
         if (typeof sliderInterval !== 'undefined' &&
             document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
             if (innerWidth != clientInnerWidthPrevious) {
