@@ -419,6 +419,10 @@ body {
 	padding-top: 35px;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+	word-wrap: break-word;
+}
+
 label {
 	display: none;
 }
@@ -991,6 +995,9 @@ label {
 	background-image: url("../img/bg-lattice.svg");
 	background-repeat: no-repeat;
 	background-position: 85% -15%;
+	padding-top: 60px;
+	display: flex;
+	flex-direction: row;
 }
 
 .automate__h1 {
@@ -999,9 +1006,7 @@ label {
 	font-size: 40px;
 	line-height: 46px;
 	letter-spacing: 0.985946px;
-	margin-top: 60px;
 	margin-left: 94px;
-	float: left;
 }
 
 .automate__panel {
@@ -1017,7 +1022,7 @@ label {
 	width: 434px;
 	display: inline-block;
 	margin-bottom: 60px;
-	padding-top: 70px;
+	padding-top: 10px;
 }
 
 .automate__form {
@@ -2259,6 +2264,7 @@ label {
 		margin-top: 110px;
 	}
 	.automate__wrapper {
+		flex-direction: column;
 		padding-top: 60px;
 		background-position: 130% -50%;
 	}
@@ -2930,6 +2936,7 @@ label {
 	.automate__paragraph {
 		width: 100%;
 		padding-top: 12px;
+		margin-bottom: 20px;
 	}
 
 	.automate__form {
