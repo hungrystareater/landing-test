@@ -234,6 +234,7 @@ label {
     border-radius: 44px;
     border: none;
     transition: all .5s ease-in;
+
     &::after {
         content: "";
         position: absolute;
@@ -246,6 +247,7 @@ label {
         border-radius: inherit;
         background-image: $gradient-blue;
     }
+
     &:hover {
         box-shadow: $blackShadow;
     }
@@ -447,14 +449,15 @@ label {
     margin-left: 15px;
     margin-right: 15px;
     cursor: pointer;
+
     &:hover {
         width: 15px;
         height: 15px;
         border-radius: 15px;
-    
+
         margin-left: 15px;
         margin-right: 15px;
-    
+
         border: none;
         background: $gradient-blue;
     }
@@ -655,7 +658,7 @@ label {
         line-height: 24px;
         letter-spacing: 0.443077px;
         color: white;
-        
+
         transition: all .5s ease-in;
 
         &:hover {
@@ -888,13 +891,13 @@ label {
     margin-top: 110px;
 }
 
-.tariffs-mobile {
-    display: none;
-}
-
 .tariffs__wrapper {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-areas:
+        'header img'
+        'summary img'
+        'form img';
+    grid-template-columns: 565px 461px;
     justify-content: space-between;
     border: $debugBorder;
 }
@@ -907,6 +910,7 @@ label {
 .tariffs__h1 {
     @include desktop-h1;
     margin-bottom: 28px;
+    grid-area: header;
 }
 
 .tariffs__p {
@@ -917,6 +921,11 @@ label {
     line-height: 34px;
     letter-spacing: 0.713846px;
     margin-bottom: 40px;
+    grid-area: summary;
+}
+
+.tariffs__img {
+    grid-area: img;
 }
 
 .tariffs__form {
@@ -926,6 +935,8 @@ label {
     border-radius: 40px;
     display: flex;
     justify-content: space-between;
+    grid-area: form;
+    margin: auto auto auto 0;
 
     input[type=text] {
         padding-left: 20px;
@@ -1037,6 +1048,7 @@ label {
     @include desktop-text-info;
     display: inline-block;
     width: 438px;
+
     &::before {
         content: url('../img/p-dash.svg');
         font-size: 70px;
@@ -1225,9 +1237,11 @@ label {
     color: white;
 
     transition: all .5s ease-in;
+
     &:hover {
         box-shadow: $blackShadow;
     }
+
     &:focus {
         outline: none;
     }
@@ -1483,6 +1497,7 @@ label {
     .slider__button {
         margin-left: 10px;
         margin-right: 10px;
+
         &:hover {
             margin-left: 10px;
             margin-right: 10px;
@@ -1718,64 +1733,36 @@ label {
     /* CASES: */
 
     /* TARIFFS: */
-    .tariffs {
-        display: none;
-    }
-
-    .tariffs-mobile {
-        display: block;
-        margin-top: 110px;
-    }
-
-    .tariffs-mobile .tariffs-mobile__img:first-child {
-        display: none;
-    }
-
-    .tariffs-mobile__text-wrapper .tariffs-mobile__img {
-        display: block;
-    }
-
-    .tariffs-mobile__wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .tariffs__wrapper {
         border: $debugBorder;
         max-width: 638px;
+        grid-template-areas:
+            'header header'
+            'summary img'
+            'form form';
+        grid-template-columns: 383px 257px;
         margin: auto;
     }
 
-    .tariffs-mobile__h1 {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 46px;
-        letter-spacing: 0.985946px;
+    .tariffs__h1 {
         margin-bottom: 70px;
         text-align: center;
     }
 
-    .tariffs-mobile__text-wrapper {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .tariffs-mobile__p {
+    .tariffs__p {
         @include desktop-text-info;
-        margin-bottom: 40px;
+        margin-bottom: 0;
         width: 381px;
     }
 
-    .tariffs-mobile__img {
-        max-width: 250px;
-    }
-
-    .tariffs-mobile__form {
+    .tariffs__form {
         width: 440px;
         height: 48px;
         background: $lightBlue;
         border-radius: 40px;
         display: flex;
         justify-content: space-between;
-        margin-top: 20px;
+        margin: 40px auto 0 auto;
 
         input[type=text] {
             padding-left: 20px;
@@ -1828,7 +1815,7 @@ label {
         }
     }
 
-    .tariffs-mobile__email-done {
+    .tariffs__email-done {
         margin: auto;
 
         font-family: 'Avenir-Next';
@@ -1840,7 +1827,6 @@ label {
 
         display: none;
     }
-
     /* TARIFFS: */
 
     /* COMING-SOON: */
@@ -1976,6 +1962,7 @@ label {
 }
 
 @media only screen and (max-width: $mobileMaxWidth) {
+
     /* For mobile: */
     body {
         padding-top: 10px;
@@ -2058,6 +2045,7 @@ label {
     .slider__button {
         margin-left: 10px;
         margin-right: 10px;
+
         &:hover {
             margin-left: 10px;
             margin-right: 10px;
@@ -2253,30 +2241,31 @@ label {
     /* CASES: */
 
     /* TARIFFS: */
-    .tariffs-mobile {
-        display: block;
-        margin-top: 70px;
-    }
-
-    .tariffs-mobile .tariffs-mobile__img:first-child {
-        display: block;
-    }
-
-    .tariffs-mobile .tariffs-mobile__img:last-child {
-        display: none;
-    }
-
-    .tariffs-mobile__h1 {
-        @include mobile-h1;
-        margin-bottom: 40px;
+    .tariffs {
         margin-top: 60px;
     }
-
-    .tariffs-mobile__p {
-        width: 100%;
+    .tariffs__wrapper {
+        grid-template-areas:
+            'image'
+            'header'
+            'summary'
+            'form';
+        grid-template-columns: 100%;
     }
 
-    .tariffs-mobile__form {
+    .tariffs__h1 {
+        @include mobile-h1;
+        margin-bottom: 40px;
+        margin-top: 0px;
+    }
+
+    .tariffs__p {
+        max-width: 420px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .tariffs__form {
         width: 100%;
         max-width: 440px;
 
@@ -2284,7 +2273,6 @@ label {
             padding: 12px 27px 12px 27px;
         }
     }
-
     /* TARIFFS: */
 
     /* COMING-SOON: */
@@ -2316,6 +2304,7 @@ label {
         letter-spacing: 0.443077px;
         padding-left: 33px;
         transform: none;
+
         &::before {
             content: url('../img/p-dash-mobile.svg');
             font-size: 40px;
@@ -2426,6 +2415,7 @@ label {
     .footer__copyright {
         margin-top: 15px;
     }
+
     /* FOOTER: */
 }
 
