@@ -6,7 +6,8 @@
 /* LANDING TEST STYLE BEGIN */
 /* LANDING TEST STYLE BEGIN */
 
-
+$tabletMaxWidth: 1439px;
+$mobileMaxWidth: 737px;
 
 
 $gradient-blue: linear-gradient(180deg, #1792C7 0%, #00B8F0 100%);
@@ -1261,7 +1262,7 @@ label {
 
 /* Footer style end */
 
-@media only screen and (max-width: 1439px) {
+@media only screen and (max-width: $tabletMaxWidth) {
 
     /* For tablet: */
     .wrapper {
@@ -1974,8 +1975,7 @@ label {
     /* FOOTER: */
 }
 
-@media only screen and (max-width: 767px) {
-
+@media only screen and (max-width: $mobileMaxWidth) {
     /* For mobile: */
     body {
         padding-top: 10px;
