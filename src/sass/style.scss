@@ -2246,11 +2246,17 @@ label {
     }
     .tariffs__wrapper {
         grid-template-areas:
-            'image'
+            'img'
             'header'
             'summary'
             'form';
         grid-template-columns: 100%;
+    }
+
+    .tariffs__img {
+        max-width: 65%;
+        margin: auto;
+        margin-bottom: 55px;
     }
 
     .tariffs__h1 {
@@ -2334,13 +2340,13 @@ label {
 
     .safety__wrapper .safety__img-wrapper:first-child {
         display: block;
+        max-width: 100%;
         width: 100%;
-    }
-
-    .safety__wrapper .safety__img-wrapper:first-child img {
-        max-width: 422px;
-        height: auto;
-        margin: auto;
+        img {
+            width: 65%;
+            height: auto;
+            margin: auto;
+        }
     }
 
     .safety__wrapper .safety__img-wrapper:nth-last-child(2) {
