@@ -112,15 +112,16 @@ onresize = (() => {
     //на мобильных браузерах окно ресайзится при скролле (пропадает строка адреса)
     //поэтому тригеррим пересчет переменных nextFrameWrapper только когда произошел ресайз ширины
     return (e) => {
-        if (typeof sliderInterval !== 'undefined' &&
-            document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
-            if (innerWidth != clientInnerWidthPrevious) {
+        if (document.getElementsByClassName("slider__frame-row")[0] !== 'undefined') {
+            if (innerWidth !== clientInnerWidthPrevious) {
                 clientInnerWidthPrevious = innerWidth;
+
                 clearInterval(sliderInterval);
-                sliderInterval = undefined;
+                
                 nextFrame = nextFrameWrapper();
                 document.getElementsByClassName("slider__frame-row")[0].style.left = '0px';
                 sliderInterval = setInterval(nextFrame, 5000);
+
                 //раскрашиваем первую кнопку
                 for (let el of document.getElementsByClassName("slider__button-container")[0].children) {
                     el.classList.remove('slider__button__displayed');
@@ -142,7 +143,7 @@ onblur = () => {
 
 onfocus = (e) => {
     if (typeof document.getElementsByClassName("slider")[0] !== 'undefined' &&
-    sliderInterval === undefined) {
+        sliderInterval === undefined) {
         let inputsEmpty = true;
         //проверяем не ввел ли юзер что-то прежде чем запустить слайдшоу в слайдере при возвращении к окну
         Array.prototype.forEach.call(
