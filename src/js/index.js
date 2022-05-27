@@ -243,6 +243,15 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
                 mobileNavscreen.style.height = `550px`;
                 return;
             }
+            if (innerWidth > 600 && innerHeight > 600) {
+                if (innerWidth > 768) {
+                    mobileNavscreen.style.height = `${innerHeight - 81}px`;
+                }
+                else {
+                    mobileNavscreen.style.height = `${innerHeight - 56}px`;
+                }
+                return;
+            }
             if (innerWidth < innerHeight) {
                 if (innerWidth > 768) {
                     mobileNavscreen.style.height = `${innerHeight - 81}px`;
@@ -253,10 +262,10 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
             }
             else {
                 if (innerWidth > 768) {
-                    mobileNavscreen.style.height = `${innerWidth - 81}px`;
+                    mobileNavscreen.style.height = `600px`;
                 }
                 else {
-                    mobileNavscreen.style.height = `${innerWidth - 56}px`;
+                    mobileNavscreen.style.height = `600px`;
                 }
             }
         }
