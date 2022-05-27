@@ -234,9 +234,7 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
         let mobileNavscreen = document.getElementsByClassName("header__mobile-navscreen")[0];
 
         if (mobileNavscreen.style.display != "block") {
-
             mobileNavscreen.style.display = "block";
-
             //ландшафтная мобильная менюшка будет со скроллом
             document.getElementsByClassName("header")[0].classList.add('header__opened');
             if (innerWidth < 600 && innerHeight < 600) {
@@ -276,10 +274,12 @@ if (typeof document.getElementsByClassName("header__burger")[0] !== 'undefined' 
         }
     }
     document.getElementsByClassName("header__mobile-navscreen")[0].onclick = (e) => {
-        document.getElementsByClassName("header__burger")[0].children[0].checked = false;
-        document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "none";
-        document.getElementsByClassName("header")[0].classList.remove('header__opened');
-        document.getElementsByClassName("header__mobile-navscreen")[0].style.height = '';
+        if (e.target.tagName == 'A') {
+            document.getElementsByClassName("header__burger")[0].children[0].checked = false;
+            document.getElementsByClassName("header__mobile-navscreen")[0].style.display = "none";
+            document.getElementsByClassName("header")[0].classList.remove('header__opened');
+            document.getElementsByClassName("header__mobile-navscreen")[0].style.height = '';
+        }
     }
 }
 
